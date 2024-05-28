@@ -76,6 +76,10 @@ article
     display: flex;
 }
 
+.col-part svg {
+    height: var(--h-1);
+}
+
 .part-treasures
 {
     background-color: grey;
@@ -88,7 +92,7 @@ article
 
 .part-living
 {
-    background-color: maroon;
+    background-color: #92101a;
 }
 
 .contents
