@@ -5,6 +5,7 @@
     --sqr: 100px;
     --h-1: 35px;
     --h-2: 40px;
+    --theme: #4F6BA6;
 }
 
 *
@@ -55,8 +56,9 @@ article
 
 .details-title
 {
-    font-weight: 600;
+    font-weight: 700;
     font-size: x-large;
+    color: var(--theme);
 }
 
 .details-month {
@@ -113,7 +115,7 @@ section
 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    background: #4F6BA6;
+    background: var(--theme);
     align-items: center;
     color: white;
     padding: 0 10px;
