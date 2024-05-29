@@ -6,6 +6,9 @@
     --h-1: 35px;
     --h-2: 40px;
     --theme: #4F6BA6;
+    --theme-gems: #2a6b77;
+    --theme-ministry: orange;
+    --theme-living: #92101a;
 }
 
 *
@@ -82,17 +85,32 @@ article
 
 .part-treasures
 {
-    background-color: grey;
+    background-color: var(--theme-gems);
 }
 
 .part-ministry
 {
-    background-color: orange;
+    background-color: var(--theme-ministry);
 }
 
 .part-living
 {
-    background-color: #92101a;
+    background-color: var(--theme-living);
+}
+
+.part-title-gems {
+    color: var(--theme-gems);
+    font-weight: 600;
+}
+
+.part-title-ministry {
+    color: var(--theme-ministry);
+    font-weight: 600;
+}
+
+.part-title-living {
+    color: var(--theme-living);
+    font-weight: 600;
 }
 
 .contents
