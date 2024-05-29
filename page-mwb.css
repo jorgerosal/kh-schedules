@@ -48,6 +48,7 @@ article
 {
     display: grid;
     grid-template-columns: var(--sqr) 1fr;
+    gap: 8px;
 }
 
 .details
@@ -161,7 +162,7 @@ section
 .week-sched
 {
     display: flex;
-    gap: 6px;
+    gap: 12px;
     align-items: center;
 }
 
@@ -181,6 +182,11 @@ section
     display: grid;
     grid-template-columns: 2fr 4fr 10fr;
     padding: 6px;
+}
+
+.part-item span:first-child {
+    color: gray;
+    font-size: smaller;
 }
 
 .part-thumbnail img
