@@ -1,0 +1,47 @@
+{
+    "period": "202406",
+    "display": "June 2024",
+    "theme": "#4F6BA6",
+    "weeks": [
+        {
+            "order": 1,
+            "week": "June 3-9",
+            "bibleReading": "PSALMS 45-47",
+            "songs": [
+                27,
+                131,
+                111
+            ]
+        },
+        {
+            "order": 2,
+            "week": "June 10-16",
+            "bibleReading": "PSALMS 48-50",
+            "songs": [
+                126,
+                73,
+                103
+            ]
+        },
+        {
+            "order": 3,
+            "week": "June 17-23",
+            "bibleReading": "PSALMS 51-53",
+            "songs": [
+                89,
+                115,
+                129
+            ]
+        },
+        {
+            "order": 4,
+            "week": "June 24-30",
+            "bibleReading": "PSALMS 54-56",
+            "songs": [
+                48,
+                153,
+                70
+            ]
+        }
+    ]
+}
