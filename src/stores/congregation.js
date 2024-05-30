@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useScheduleStore = defineStore('schedule', () => {
+export const useCongregationStore = defineStore('congregation', () => {
     const congregation = ref({
         name: "Sign Language Congregation - Tacloban City",
         publishers: [
@@ -11,9 +11,6 @@ export const useScheduleStore = defineStore('schedule', () => {
             { name: 'Meriam Dy', roles: ['rp'] },
         ],
     });
-
-    const month = ref({});
-    const availableMonths = ref([])
 
     const publisherNames = computed(() => {
         const pubs = congregation.value.publishers
@@ -37,13 +34,5 @@ export const useScheduleStore = defineStore('schedule', () => {
         return pubs.filter(p => p.roles && (p.roles.includes('elder') || p.roles.includes('ms')));
     })
 
-    function setMWBMonth(monthLibrary) {
-        month.value = monthLibrary;
-    }
-
-    function setAvailableMonths(monthOptions) {
-        availableMonths.value = monthOptions;
-    }
-
-    return { congregation, publisherNames, publishers, eldersMs, setMWBMonth, setAvailableMonths }
+    return { congregation, publisherNames, publishers, eldersMs, }
 })
