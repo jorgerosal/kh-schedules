@@ -3,21 +3,23 @@ import { defineStore } from 'pinia'
 
 export const useCongregationStore = defineStore('congregation', () => {
 
-    // {
-    //     name: "Sign Language Congregation - Tacloban City",
-    //     publishers: [
-    //         { name: 'Jezreel Tan', roles: ['elder'] },
-    //         { name: 'Alberto Balleres', roles: ['ms'] },
-    //         { name: 'Keno Dagalea', roles: ['elder', 'secretary'] },
-    //         { name: 'Meriam Dy', roles: ['rp'] },
-    //     ],
-    // }
     const LOCAL_KEY = "congregation"
     const congregation = ref({});
 
     const congName = computed(() => {
         return congregation.value?.name ?? null
     })
+
+    const roles = ref([
+        { code: "elder", display: "Elder" },
+        { code: "ms", display: "MS" },
+        { code: "cobe", display: "Coordinator" },
+        { code: "so", display: "Service Overseer" },
+        { code: "sec", display: "Secretary" },
+        { code: "br", display: "Bible Reading" },
+        { code: "talk", display: "Talk Assignments" },
+        { code: "demo", display: "Demonstrations" },
+    ])
 
     const publisherNames = computed(() => {
         const pubs = congregation.value?.publishers ?? []
@@ -55,5 +57,36 @@ export const useCongregationStore = defineStore('congregation', () => {
         localStorage.setItem(LOCAL_KEY, storable)
     }
 
-    return { congregation, congName, publisherNames, publishers, eldersMs, retrieveLocal, storeToLocal }
+    function setCongName(name) {
+        congregation.value['name'] = name 
+    }
+
+    function addPublisher(pub) {
+        const pubs = congregation.value.publishers
+
+        if (!pubs) congregation.value.publishers = []
+        congregation.value.publishers.push(pub)
+
+        storeToLocal();
+    }
+
+    function updatePublisher(pub) {
+        const pubs = congregation.value.publishers
+        const target = pubs.find(p => p.name == pub.name)
+        
+        if (target) {
+            target.name = pub.name;
+            target.roles = pub.roles;
+        } else {
+            congregation.value.publishers.push(pub)
+        }
+
+        storeToLocal();
+    }
+
+    function removePublisher(pub) {
+        congregation.value.publishers = congregation.value.publishers.filter(f => f.name !== pub.name);
+    }
+    
+    return { congregation, congName, setCongName, publisherNames, publishers, roles, eldersMs, retrieveLocal, storeToLocal, addPublisher, updatePublisher, removePublisher }
 })

@@ -2,31 +2,51 @@
   import MainHeader from '@/components/schedule-template/MainHeader.vue';
   import MeetingSections from '@/components/schedule-template/MeetingSections.vue';
   import ScheduleContainer from '@/components/schedule-template/ScheduleContainer.vue';
-  import { onMounted } from 'vue';
+  import CongregationForm from '@/components/forms/CongregationForm.vue';
+  import CongPublishers from './components/forms/CongPublishers.vue';
+  import PublisherForm from './components/forms/PublisherForm.vue';
+  
+  import { onMounted, ref } from 'vue';
   import { useFileStore } from './stores/files';
   import { useCongregationStore } from './stores/congregation';
-  import { ref } from 'vue'
+  import { useAssignmentsStore } from './stores/assignments';
+  import { useViewStore } from './stores/views';
+
+
+  const viewStore = useViewStore()
 
   const files = useFileStore()
   const cong = useCongregationStore()
-  const enforceBasic = ref(false)
 
-  onMounted(() => {
-    files.loadFiles();
-    files.setMWBMonth('202406');
+
+  const assignments = useAssignmentsStore()
+  const modals = ref({
+    show: false
+  })
+
+  onMounted(async () => {
+    await files.loadFiles();
+    files.setMWBMonth();
     cong.retrieveLocal();
-
-    enforceBasic.value = cong.congName == null
+    assignments.retrieveLocal();
+    viewStore.congregationForm = cong.congName == null || typeof cong.congName == 'undefined'
   })
 </script>
 
 <template>
-  <article v-if="!enforceBasic" >
-    <MainHeader />
-    <MeetingSections />
-    <ScheduleContainer />
-  </article>
-  <div v-else>
-    What congregation are you trying to set up?
-  </div>
+  <PublisherForm v-if="viewStore.pubForm" />
+  <template v-if="viewStore.congregationForm">
+    <CongregationForm />
+  </template>
+  <template v-else-if="viewStore.publishers">
+    <CongPublishers />
+  </template>
+  <template v-else>
+    <article>
+      <MainHeader :modals="modals" />
+      <MeetingSections />
+      <ScheduleContainer />
+    </article>
+  </template>
+
 </template>

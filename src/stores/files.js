@@ -11,7 +11,7 @@ export const useFileStore = defineStore('files', () => {
         for (const path in jsonFiles) {
             const fileName = path.split('/').pop();
             const content = await jsonFiles[path]();
-            availableMonths.value.push({ name: fileName, content: content.default });
+            availableMonths.value.unshift({ name: fileName, content: content.default });
         }
     }
 
@@ -21,8 +21,14 @@ export const useFileStore = defineStore('files', () => {
         return mo ?? {};
     })
 
-    function setMWBMonth(monthNum) {
-        month.value = monthNum;
+
+
+    async function setMWBMonth(monthNum) {
+        if (!monthNum) {
+            month.value = availableMonths.value[0].content.period
+        } else {
+            month.value = monthNum;
+        }
     }
 
     return { availableMonths, selectedMonth, setMWBMonth, loadFiles }

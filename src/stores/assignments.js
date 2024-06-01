@@ -6,7 +6,7 @@ export const useAssignmentsStore = defineStore('assignments', () => {
     const LOCAL_KEY = 'assignments'
     const assignments = ref({});
 
-    const getAssignments = computed(()=> {
+    const getAssignments = computed(() => {
         return assignments.value
     });
 
@@ -24,5 +24,10 @@ export const useAssignmentsStore = defineStore('assignments', () => {
         localStorage.setItem(LOCAL_KEY, storable)
     }
 
-    return { retrieveLocal, getAssignments, storeToLocal }
+    function setAssignment(partid, students) {
+        assignments.value[partid] = students;
+        storeToLocal();
+    }
+
+    return { retrieveLocal, getAssignments, storeToLocal, setAssignment }
 })

@@ -7,7 +7,7 @@
     --h-2: 40px;
     --theme: #4F6BA6;
     --theme-gems: #2a6b77;
-    --theme-ministry: orange;
+    --theme-ministry: #9b6d17;
     --theme-living: #92101a;
 }
 
@@ -23,15 +23,17 @@
 body
 {
     height: 100vh;
+    position: relative;
 }
 
 #app
 {
     display: flex;
     margin: auto;
-    height: 100%;
     width: 1080px;
-    padding: 20px;
+    padding: 50px;
+    background-color: white;
+    overflow: auto;
 }
 
 article
@@ -62,11 +64,67 @@ article
 {
     font-weight: 700;
     font-size: x-large;
-    color: var(--theme);
 }
 
-.details-month {
+.details-month
+{
     font-size: large;
+    padding: 0 6px 6px 0;
+    transition: color .4s;
+    position: relative;
+}
+
+#active-month:hover
+{
+    cursor: pointer;
+    color: orange;
+    font-weight: 500;
+}
+
+#month-selector-form
+{
+    font-size: 14px;
+    border-radius: 3px;
+    min-width: 180px;
+    padding: 0 0 10px 0;
+    top: 8px;
+    position: absolute;
+    background: white;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+#month-selector-form.show
+{
+    opacity: 1;
+}
+
+.month-selector-title
+{
+    font-size: small;
+    padding: 10px 25px 6px;
+    color: gray;
+}
+
+.select-option
+{
+    padding: 8px 25px;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+.select-option:not(:first-child) {
+    border-top: 1px dotted rgba(255, 166, 0, 0.199);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.select-option:hover {
+    background: orange;
+    color: white;
 }
 
 .parts
@@ -80,7 +138,8 @@ article
     display: flex;
 }
 
-.col-part svg {
+.col-part svg
+{
     height: var(--h-1);
 }
 
@@ -99,17 +158,20 @@ article
     background-color: var(--theme-living);
 }
 
-.part-title-gems {
+.part-title-gems
+{
     color: var(--theme-gems);
     font-weight: 600;
 }
 
-.part-title-ministry {
+.part-title-ministry
+{
     color: var(--theme-ministry);
     font-weight: 600;
 }
 
-.part-title-living {
+.part-title-living
+{
     color: var(--theme-living);
     font-weight: 600;
 }
@@ -165,8 +227,15 @@ section
     align-items: center;
 }
 
-.week-date {
+.week-date
+{
     text-transform: uppercase;
+}
+
+.icon
+{
+    display: grid;
+    place-items: center;
 }
 
 .icon svg
@@ -187,7 +256,8 @@ section
     padding: 6px;
 }
 
-.part-item span:first-child {
+.part-item span:first-child
+{
     color: gray;
     font-size: smaller;
 }
@@ -197,9 +267,34 @@ section
     width: 80%;
 }
 
-.assignee
+.assignee {
+    position: relative;
+}
+
+.assign-to
 {
     font-weight: 600;
+    cursor: pointer;
+    transition: ease .3s;
+    color: rgb(58, 58, 58);
+}
+
+.assign-to:hover {
+    color: orange;
+    font-weight: 500;
+}
+
+#assignee-selector {
+    position: absolute;
+    top: 2px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    min-width: 250px;
+    min-height: 120px;
+    max-height: 300px;
+    background: white;
+    border-radius: 4px;
+    z-index: 2;
+    display: flex;
 }
 
 .generic-label
@@ -208,27 +303,162 @@ section
     font-style: italic;
 }
 
+#cong-form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+
+#cong-form .wrapper
+{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+}
+
+#cong-form input
+{
+    width: 100%;
+    background-color: rgba(185, 185, 185, 0.13);
+    text-align: center;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 15px 20px;
+}
+
+#cong-form button,
+#cong-form input
+{
+    border: none;
+}
+
+#cong-form .h1
+{
+    font-size: 3rem;
+    font-weight: 600;
+    padding: 1.5rem 0;
+    color: #FEBE10;
+}
+
+.btn-sm {
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: smaller;
+    text-wrap: nowrap;
+    padding: 3px 8px;
+    background: white;
+    color: #FEBE10;
+    border: 1px solid #FEBE10;
+    transition: ease-in-out .2s;
+}
+
+.btn-md {
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 6px 15px;
+    background: white;
+    color: #FEBE10;
+    border: 2px solid #FEBE10;
+    transition: ease-in-out .2s;
+}
+
+.btn-md:hover, .btn-sm:hover {
+    color: white;
+    background: #FEBE10;
+}
+
+.btn-md-inv {
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 6px 15px;
+    border: 2px solid #FEBE10;
+    background: #FEBE10;
+    transition: ease-in-out .2s;
+    color: white;
+}
+
+.btn-md-inv:hover {
+    background: #ffa600;
+}
+
+#cong-form .h2
+{
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#cong-form button
+{
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 20px;
+    background: #FEBE10;
+    color: white;
+}
+
+#cong-form .wrapper div
+{
+    text-align: center;
+}
+
+#modal-dark
+{
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.521);
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 3;
+}
+
+#form-publisher {
+    min-width: 600px;
+    min-height: 200px;
+    background: white;
+    display: grid;
+    padding: 30px;
+    grid-template-rows: 40px 1fr 40px;
+    border-radius: 5px;
+}
+
+.no-scroll
+{
+    overflow: hidden;
+}
+
+#cong-publishers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+
+
 @media print
 {
     body
     {
         -webkit-print-color-adjust: exact;
     }
-}
 
-@page
-{
-    size: a4;
-
-    *
-    {
-        -webkit-print-color-adjust: exact !important;
-        color-adjust: exact !important;
-        print-color-adjust: exact !important;
-    }
-
-    #wrapper
+    #app
     {
         padding: 0;
+        border: none;
     }
 }
