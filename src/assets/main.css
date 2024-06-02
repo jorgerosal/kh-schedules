@@ -282,6 +282,7 @@ section
 
 .assignee {
     position: relative;
+    cursor: pointer;
 }
 
 .assign-to
