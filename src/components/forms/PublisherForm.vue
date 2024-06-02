@@ -39,7 +39,7 @@
 
     const pubName = ref(null)
 
-    const selectedRoles = ref([])
+    const selectedRoles = ref(["demo"])
     const title = computed(() => {
         if (viewStore.pubFormMode == 'new') {
             return "New Person"

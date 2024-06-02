@@ -17,8 +17,9 @@ export const useCongregationStore = defineStore('congregation', () => {
         { code: "so", display: "Service Overseer" },
         { code: "sec", display: "Secretary" },
         { code: "br", display: "Bible Reading" },
-        { code: "talk", display: "Talk Assignments" },
-        { code: "demo", display: "Demonstrations" },
+        { code: "talk", display: "Talks" },
+        { code: "demo", display: "Demos" },
+        { code: "cbs", display: "CBS Conductor" },
     ])
 
     const publisherNames = computed(() => {
@@ -59,6 +60,7 @@ export const useCongregationStore = defineStore('congregation', () => {
 
     function setCongName(name) {
         congregation.value['name'] = name 
+        storeToLocal()
     }
 
     function addPublisher(pub) {

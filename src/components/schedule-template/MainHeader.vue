@@ -4,12 +4,16 @@
             <img :src="file.selectedMonth?.content?.thumbnail" alt="">
         </div>
         <div class="details">
-            <div> {{ congregation.congName ?? 'Not Provided' }}</div>
+            <div class="detail-congname">
+                <input type="text" placeholder="Provide your congregation here! " :value="congregation.congName"
+                    @input="updateCongName">
+            </div>
             <div class="details-title" :style="bg">Our Christian Life and Ministry Meeting Schedule</div>
             <div class="details-month" v-if="true" @click="showMonthSelector">
                 <div id="active-month">{{ file.selectedMonth.content?.display }}</div>
 
-                <div id="month-selector-form" v-if="viewMonthSelector" :class="{ show: viewMonthSelector }" @mouseleave="viewMonthSelector = false">
+                <div id="month-selector-form" v-if="viewMonthSelector" :class="{ show: viewMonthSelector }"
+                    @mouseleave="viewMonthSelector = false">
                     <div class="month-selector-title">SELECT MONTH</div>
                     <div class="select-options">
                         <div class="select-option" v-for="f in file.availableMonths" @click.stop="loadMonth(f)">
@@ -54,5 +58,9 @@
         const period = selection.content.period
         file.setMWBMonth(period)
         viewMonthSelector.value = false
+    }
+
+    function updateCongName(event) {
+        congregation.setCongName(event.target.value);
     }
 </script>

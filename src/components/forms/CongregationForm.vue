@@ -8,7 +8,7 @@
                 What congregation are you from?
             </div>
             <div>
-                <input type="text" placeholder="Please indicate here..." v-model="cong">
+                <input type="text" placeholder="e.g. Sign Language Congregation - Tacloban City" v-model="cong">
             </div>
             <div>
                 <button @click="assignCongName">Confirm</button>

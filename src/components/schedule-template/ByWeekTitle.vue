@@ -29,7 +29,12 @@
                 <IconPraying />
             </span>
             <span>
-                #Prayer Assignments
+                <div class="assignee" @click="showSelector">
+                    {{ assigneeDisplay }}
+                </div>
+
+                <PublisherSelector v-if="selector.show" :part="prayer" @mouseleave="hideSelector" :me="selector"
+                    :assignee="assignee" />
             </span>
         </div>
     </div>
@@ -40,12 +45,49 @@
     import IconBible from '@/components/icons/IconBible.vue';
     import IconMusicNotes from '../icons/IconMusicNotes.vue';
     import IconPraying from '../icons/IconPraying.vue';
-    import { computed } from 'vue';
+    import PublisherSelector from '@/components/schedule-template/PublisherSelector.vue'
+
+    import { computed, ref, watch, onMounted } from 'vue';
     import { useFileStore } from '@/stores/files';
-    
+    import { useAssignmentsStore } from '@/stores/assignments';
+
+    const selector = ref({
+        show: false
+    })
+
+    const assignmentStore = useAssignmentsStore();
 
     const props = defineProps({
         w: { type: Object, }
+    })
+
+    const prayer = ref({
+        id: null,
+        roles: ['elder', 'ms', 'prayer']
+    })
+
+    watch(
+        () => props.w,
+        (newVal) => {
+            prayer.value.id = newVal.id
+        },
+        { deep: true }
+    )
+
+    onMounted(() => { 
+        prayer.value.id = props.w.id
+    })
+
+    const assigneeDisplay = computed(() => {
+        const partid = props.w.id
+        const assigned = assignmentStore.getAssignments[partid];
+        return assigned ?? 'Not Assigned!'
+    })
+
+    const assignee = computed(() => {
+        const partid = props.w.id
+        const assigned = assignmentStore.getAssignments[partid];
+        return assigned
     })
 
     const fileStore = useFileStore();
@@ -55,5 +97,17 @@
             background: fileStore.selectedMonth.content.theme
         }
     })
+
+    const weekId = computed(() => {
+        return props.w.id
+    })
+
+    function showSelector() {
+        selector.value.show = true
+    }
+
+    function hideSelector() {
+        selector.value.show = false
+    }
 
 </script>

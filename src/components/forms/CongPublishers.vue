@@ -12,10 +12,9 @@
                 </div>
             </div>
             <div class="pub-list">
-                <div class="pub-row" v-for="p in congStore.publishers" :key="p.name" @click="editPub(p)" >
-                    <div> {{ p.name }} </div>
-                    <div> {{ p.roles.join(' ') }}</div>
-                </div>
+                <template v-for="p in congStore.publishers" :key="p.name">
+                    <PublisherListItem :p="p" @click="editPub(p)" />
+                </template>
             </div>
         </div>
     </div>
@@ -24,6 +23,8 @@
 <script setup>
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
+    import PublisherListItem from '../schedule-template/PublisherListItem.vue';
+
 
     const congStore = useCongregationStore()
     const viewStore = useViewStore()
@@ -82,26 +83,9 @@
         flex: 1;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-auto-rows: 60px;
+        grid-auto-rows: 75px;
         gap: 10px;
         padding-top: 20px;
-    }
-
-    .pub-row
-    {
-        cursor: pointer;
-        padding: 10px;
-        font-size: 14px;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-        transition: ease-in-out .2s;
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-    }
-
-    .pub-row:hover
-    {
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     }
 
     .btns

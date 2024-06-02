@@ -6,6 +6,7 @@
     "weeks": [
         {
             "order": 1,
+            "id": "202406.1",
             "week": "June 3-9",
             "bibleReading": "PSALMS 45-47",
             "songs": [
@@ -65,7 +66,9 @@
                         "class": "part-title-ministry",
                         "reference": "lmd 1:3",
                         "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
-                        "demo": true
+                        "roles": [
+                            "demo"
+                        ]
                     },
                     {
                         "id": "202406.1.5",
@@ -74,7 +77,6 @@
                         "class": "part-title-ministry",
                         "reference": "th 18",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
-                        "demo": false,
                         "roles": [
                             "talk"
                         ]
@@ -86,19 +88,25 @@
                         "class": "part-title-ministry",
                         "reference": "lmd 6:5",
                         "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
-                        "demo": true
+                        "roles": [
+                            "demo"
+                        ]
                     }
                 ],
                 "living": [
                     {
-                        "id": "202406.1.6",
+                        "id": "202406.1.7",
                         "time": 10,
                         "title": "Continue to Show Affection in Your Marriage",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024165/univ/art/202024165_univ_cnt_3_lg.jpg"
+                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024165/univ/art/202024165_univ_cnt_3_lg.jpg",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
-                        "id": "202406.1.7",
+                        "id": "202406.1.8",
                         "time": 5,
                         "title": "Local Needs",
                         "class": "part-title-living",
@@ -107,27 +115,31 @@
                         ]
                     },
                     {
-                        "id": "202406.1.8",
+                        "id": "202406.1.9",
                         "time": 30,
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
                         "reference": "lfb 25 & 26",
                         "roles": [
-                            "elder",
-                            "ms"
+                            "cbs"
                         ]
                     },
                     {
-                        "id": "202406.1.9",
+                        "id": "202406.1.10",
                         "time": 3,
-                        "reference": "Conclusion"
+                        "reference": "Conclusion",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     }
                 ]
             }
         },
         {
             "order": 2,
+            "id": "202406.2",
             "week": "June 10-16",
             "bibleReading": "PSALMS 48-50",
             "songs": [
@@ -140,28 +152,43 @@
                     {
                         "id": "202406.2.0",
                         "time": 1,
-                        "reference": "Introduction"
+                        "reference": "Introduction",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.2.1",
                         "time": 10,
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024166/sign/art/202024166_sign_sqs_lg.jpg",
                         "title": "Parents​—Strengthen Your Family’s Confidence in Jehovah’s Organization",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.2.2",
                         "time": 10,
                         "reference": "Ps 49:6, 7​",
                         "title": "Spiritual Gems",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.2.3",
                         "time": 4,
                         "reference": "Ps 50:1-15",
                         "title": "Bible Reading",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "br"
+                        ]
                     }
                 ],
                 "ministry": [
@@ -171,7 +198,11 @@
                         "title": "Boldness​—What Jesus Did",
                         "class": "part-title-ministry",
                         "reference": "lmd 6:1-2",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.2.5",
@@ -179,7 +210,11 @@
                         "title": "Boldness​—Imitate Jesus",
                         "class": "part-title-ministry",
                         "reference": "lmd 6:3-5, See Also",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     }
                 ],
                 "living": [
@@ -187,7 +222,10 @@
                         "id": "202406.2.6",
                         "time": 15,
                         "title": "Local Needs",
-                        "class": "part-title-living"
+                        "class": "part-title-living",
+                        "roles": [
+                            "elder"
+                        ]
                     },
                     {
                         "id": "202406.2.7",
@@ -195,18 +233,26 @@
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
-                        "reference": "lfb 27 & 28"
+                        "reference": "lfb 27 & 28",
+                        "roles": [
+                            "cbs"
+                        ]
                     },
                     {
                         "id": "202406.2.8",
                         "time": 3,
-                        "reference": "Conclusion"
+                        "reference": "Conclusion",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     }
                 ]
             }
         },
         {
             "order": 3,
+            "id": "202406.3",
             "week": "June 17-23",
             "bibleReading": "PSALMS 51-53",
             "songs": [
@@ -219,28 +265,43 @@
                     {
                         "id": "202406.3.0",
                         "time": 1,
-                        "reference": "Introduction"
+                        "reference": "Introduction",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.3.1",
                         "time": 10,
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024167/sign/art/202024167_sign_sqs_lg.jpg",
                         "title": "Take Steps to Avoid Serious Mistakes",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.3.2",
                         "time": 10,
                         "reference": "Ps 51:1-4​",
                         "title": "Spiritual Gems",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.3.3",
                         "time": 4,
                         "reference": "Ps 51:1-14",
                         "title": "Bible Reading",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "br"
+                        ]
                     }
                 ],
                 "ministry": [
@@ -250,7 +311,10 @@
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
                         "reference": "lmd 7:3",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     },
                     {
                         "id": "202406.3.5",
@@ -258,7 +322,10 @@
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
                         "reference": "lmd 4:4",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     },
                     {
                         "id": "202406.3.6",
@@ -266,7 +333,10 @@
                         "title": "Following Up",
                         "class": "part-title-ministry",
                         "reference": "lmd 9:5",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     },
                     {
                         "id": "202406.3.7",
@@ -274,7 +344,10 @@
                         "title": "Making Disciples",
                         "class": "part-title-ministry",
                         "reference": "lmd 11:5",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     }
                 ],
                 "living": [
@@ -283,7 +356,11 @@
                         "time": 15,
                         "title": "Take Steps to Fix Your Mistakes",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024167/univ/art/202024167_univ_cnt_2_lg.jpg",
-                        "class": "part-title-living"
+                        "class": "part-title-living",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.2.9",
@@ -291,18 +368,26 @@
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
-                        "reference": "lfb Sec 6, 29 & 30"
+                        "reference": "lfb Sec 6, 29 & 30",
+                        "roles": [
+                            "cbs"
+                        ]
                     },
                     {
                         "id": "202406.2.10",
                         "time": 3,
-                        "reference": "Conclusion"
+                        "reference": "Conclusion",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     }
                 ]
             }
         },
         {
             "order": 4,
+            "id": "202406.4",
             "week": "June 24-30",
             "bibleReading": "PSALMS 54-56",
             "songs": [
@@ -315,28 +400,43 @@
                     {
                         "id": "202406.4.0",
                         "time": 1,
-                        "reference": "Introduction"
+                        "reference": "Introduction",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.4.1",
                         "time": 10,
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024168/univ/art/202024168_univ_sqs_lg.jpg",
                         "title": "God Is on Your Side",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.4.2",
                         "time": 10,
                         "reference": "Ps 55:22​​",
                         "title": "Spiritual Gems",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.4.3",
                         "time": 4,
                         "reference": "Ps 55:1-15",
                         "title": "Bible Reading",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "br"
+                        ]
                     }
                 ],
                 "ministry": [
@@ -346,7 +446,10 @@
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
                         "reference": "th 11",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg"
+                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     },
                     {
                         "id": "202406.4.5",
@@ -354,7 +457,10 @@
                         "title": "Following Up",
                         "class": "part-title-ministry",
                         "reference": "lmd 7:4",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     },
                     {
                         "id": "202406.4.6",
@@ -362,7 +468,10 @@
                         "title": "Talk",
                         "class": "part-title-ministry",
                         "reference": "th 9",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg"
+                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
+                        "roles": [
+                            "talk"
+                        ]
                     }
                 ],
                 "living": [
@@ -371,13 +480,21 @@
                         "time": 5,
                         "title": "We Can Rejoice Despite . . . Sword",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024168/univ/art/202024168_univ_cnt_3_lg.jpg",
-                        "class": "part-title-living"
+                        "class": "part-title-living",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.4.8",
                         "time": 10,
                         "title": "Organizational Accomplishments for June",
-                        "class": "part-title-living"
+                        "class": "part-title-living",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202406.4.9",
@@ -385,12 +502,19 @@
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
-                        "reference": "lfb Sec 6, 29 & 30"
+                        "reference": "lfb Sec 6, 29 & 30",
+                        "roles": [
+                            "cbs"
+                        ]
                     },
                     {
                         "id": "202406.4.10",
                         "time": 3,
-                        "reference": "Conclusion"
+                        "reference": "Conclusion",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     }
                 ]
             }

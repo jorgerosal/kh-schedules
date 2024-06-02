@@ -60,6 +60,17 @@ article
     padding: 12px;
 }
 
+.detail-congname input {
+    border: none;
+    outline: none;
+    min-width: 100%;
+    font-size: medium;
+}
+
+.detail-congname input:focus {
+    border-bottom: 1px solid gray;
+}
+
 .details-title
 {
     font-weight: 700;
@@ -98,6 +109,7 @@ article
 #month-selector-form.show
 {
     opacity: 1;
+    z-index: 2;
 }
 
 .month-selector-title
@@ -199,7 +211,7 @@ section
 .title
 {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 2.8fr 2.8fr 2.8fr 4fr;
     align-items: center;
     color: white;
     padding: 0 10px;
@@ -225,6 +237,7 @@ section
     display: flex;
     gap: 12px;
     align-items: center;
+    position: relative;
 }
 
 .week-date
@@ -277,6 +290,10 @@ section
     cursor: pointer;
     transition: ease .3s;
     color: rgb(58, 58, 58);
+}
+
+.faded {
+    color: rgba(58, 58, 58, 0.192);
 }
 
 .assign-to:hover {
