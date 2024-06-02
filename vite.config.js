@@ -9,9 +9,8 @@ export default defineConfig({
   plugins: [
     vue(),
     VueDevTools(),
-    
   ],
-  base: '/kh-schedules/',
+  base: './',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
