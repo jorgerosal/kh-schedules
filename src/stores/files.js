@@ -11,7 +11,8 @@ export const useFileStore = defineStore('files', () => {
         for (const path in jsonFiles) {
             const fileName = path.split('/').pop();
             const content = await jsonFiles[path]();
-            availableMonths.value.unshift({ name: fileName, content: content.default });
+            if (content.default.publish) 
+                availableMonths.value.unshift({ name: fileName, content: content.default });
         }
     }
 
