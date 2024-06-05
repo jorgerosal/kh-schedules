@@ -22,6 +22,13 @@ export const useCongregationStore = defineStore('congregation', () => {
         { code: "cbs", display: "CBS Conductor" },
     ])
 
+    const languages = ref ([
+        {code: 'psp', lang: 'Filipino Sign Language'},
+        {code: 'ceb', lang: 'Cebuano'},
+        {code: 'war', lang: 'Waray-waray'},
+        {code: 'tl', lang: 'Tagalog'},
+    ]);
+
     const publisherNames = computed(() => {
         const pubs = congregation.value?.publishers ?? []
         const names = pubs.map(p => p['name']);
@@ -90,5 +97,5 @@ export const useCongregationStore = defineStore('congregation', () => {
         congregation.value.publishers = congregation.value.publishers.filter(f => f.name !== pub.name);
     }
     
-    return { congregation, congName, setCongName, publisherNames, publishers, roles, eldersMs, retrieveLocal, storeToLocal, addPublisher, updatePublisher, removePublisher }
+    return { congregation, congName, setCongName, publisherNames, publishers, roles, eldersMs, retrieveLocal, storeToLocal, addPublisher, updatePublisher, removePublisher, languages }
 })
