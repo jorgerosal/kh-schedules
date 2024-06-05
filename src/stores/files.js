@@ -6,7 +6,7 @@ export const useFileStore = defineStore('files', () => {
     const availableMonths = ref([])
 
     async function loadFiles() {
-        const jsonFiles = import.meta.glob('@/lib/mwb-scheds/*.json');
+        const jsonFiles = import.meta.glob('@/lib/psp/*.json');
         availableMonths.value = []
         for (const path in jsonFiles) {
             const fileName = path.split('/').pop();
