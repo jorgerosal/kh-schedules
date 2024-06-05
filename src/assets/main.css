@@ -26,7 +26,44 @@ body
     position: relative;
 }
 
-#app
+#app{
+    height: auto;
+    display: flex;
+    background: transparent;
+}
+
+#printer {
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#printer button {
+    border: 1px solid orange;
+    padding: 10px 40px;
+    font-size: medium;
+    border-radius: 50px;
+    background: orange;
+    color: white;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+#printer button:hover {
+    background: rgb(255, 179, 39);
+}
+
+#template-bg
+{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgb(182, 182, 182);
+    overflow: auto;
+}
+
+#fsl-mwb
 {
     display: flex;
     margin: auto;
@@ -34,6 +71,7 @@ body
     padding: 50px;
     background-color: white;
     overflow: auto;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 article
@@ -57,17 +95,19 @@ article
 {
     display: flex;
     flex-direction: column;
-    padding: 12px;
 }
 
-.detail-congname input {
+.detail-congname input
+{
     border: none;
     outline: none;
     min-width: 100%;
     font-size: medium;
+    padding-left: 12px;
 }
 
-.detail-congname input:focus {
+.detail-congname input:focus
+{
     border-bottom: 1px solid gray;
 }
 
@@ -75,21 +115,31 @@ article
 {
     font-weight: 700;
     font-size: x-large;
+    padding-left: 12px;
 }
 
 .details-month
 {
     font-size: large;
-    padding: 0 6px 6px 0;
     transition: color .4s;
+    padding: 6px;
     position: relative;
+}
+
+#active-month
+{
+    display: inline;
+    padding: 3px 6px;
+    border: 1px solid transparent;
+    transition: ease-in-out .2s;
+    border-radius: 3px;
 }
 
 #active-month:hover
 {
     cursor: pointer;
     color: orange;
-    font-weight: 500;
+    border: 1px solid orange;
 }
 
 #month-selector-form
@@ -126,15 +176,18 @@ article
     transition: ease-in-out .2s;
 }
 
-.select-option:not(:first-child) {
+.select-option:not(:first-child)
+{
     border-top: 1px dotted rgba(255, 166, 0, 0.199);
 }
 
-.uppercase {
+.uppercase
+{
     text-transform: uppercase;
 }
 
-.select-option:hover {
+.select-option:hover
+{
     background: orange;
     color: white;
 }
@@ -201,6 +254,10 @@ section
     grid-column: span 3;
     display: grid;
     grid-template-rows: var(--h-1) min-content;
+}
+
+.page-break {
+    page-break-after: always;
 }
 
 .mwb-thumbnail img
@@ -280,7 +337,8 @@ section
     width: 80%;
 }
 
-.assignee {
+.assignee
+{
     position: relative;
     cursor: pointer;
 }
@@ -293,18 +351,22 @@ section
     color: rgb(58, 58, 58);
 }
 
-.faded {
+.faded
+{
     color: rgba(58, 58, 58, 0.192);
 }
 
-.assign-to:hover {
+.assign-to:hover
+{
     color: orange;
     font-weight: 500;
 }
 
-#assignee-selector {
+#assignee-selector
+{
     position: absolute;
     top: 2px;
+    left: -50px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     min-width: 250px;
     min-height: 120px;
@@ -324,10 +386,14 @@ section
 #cong-form
 {
     display: flex;
+    margin: auto;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 80%;
+    max-width: 1200px;
+    padding: 100px;
+    /* background: red; */
 }
 
 #cong-form .wrapper
@@ -362,7 +428,8 @@ section
     color: #FEBE10;
 }
 
-.btn-sm {
+.btn-sm
+{
     cursor: pointer;
     border-radius: 5px;
     font-size: smaller;
@@ -374,7 +441,8 @@ section
     transition: ease-in-out .2s;
 }
 
-.btn-md {
+.btn-md
+{
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
@@ -385,12 +453,15 @@ section
     transition: ease-in-out .2s;
 }
 
-.btn-md:hover, .btn-sm:hover {
+.btn-md:hover,
+.btn-sm:hover
+{
     color: white;
     background: #FEBE10;
 }
 
-.btn-md-inv {
+.btn-md-inv
+{
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
@@ -401,7 +472,8 @@ section
     color: white;
 }
 
-.btn-md-inv:hover {
+.btn-md-inv:hover
+{
     background: #ffa600;
 }
 
@@ -441,7 +513,8 @@ section
     z-index: 3;
 }
 
-#form-publisher {
+#form-publisher
+{
     min-width: 600px;
     min-height: 200px;
     background: white;
@@ -456,7 +529,8 @@ section
     overflow: hidden;
 }
 
-#cong-publishers {
+#cong-publishers
+{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -474,9 +548,19 @@ section
         -webkit-print-color-adjust: exact;
     }
 
-    #app
+    #app {
+        width: 1080px;
+    }
+
+    #printer {
+        display: none;
+    } 
+
+    #fsl-mwb, #template-bg
     {
         padding: 0;
         border: none;
     }
+
+
 }

@@ -9,8 +9,8 @@
                     @input="updateCongName">
             </div>
             <div class="details-title" :style="bg">Our Christian Life and Ministry Meeting Schedule</div>
-            <div class="details-month" v-if="true" @click="showMonthSelector">
-                <div id="active-month">{{ file.selectedMonth.content?.display }}</div>
+            <div class="details-month" v-if="true" >
+                <div id="active-month" @click="showMonthSelector">{{ file.selectedMonth.content?.display }}</div>
 
                 <div id="month-selector-form" v-if="viewMonthSelector" :class="{ show: viewMonthSelector }"
                     @mouseleave="viewMonthSelector = false">

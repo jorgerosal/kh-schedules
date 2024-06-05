@@ -50,9 +50,9 @@
     {
         display: flex;
         flex-direction: column;
-        max-width: 1080px;
+        max-width: 1180px;
         height: 100%;
-        padding: .8rem;
+        padding: 3.8rem;
         margin: auto;
     }
 

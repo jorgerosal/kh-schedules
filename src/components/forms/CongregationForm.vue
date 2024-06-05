@@ -10,6 +10,11 @@
             <div>
                 <input type="text" placeholder="e.g. Sign Language Congregation - Tacloban City" v-model="cong">
             </div>
+
+            <!-- <div>
+                <input type="text" placeholder="Select meeting language" :value="congStore.languages.join('')">
+            </div> -->
+
             <div>
                 <button @click="assignCongName">Confirm</button>
             </div>
