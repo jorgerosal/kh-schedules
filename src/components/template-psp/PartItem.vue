@@ -24,7 +24,7 @@
 <script setup>
     import { computed, ref } from 'vue';
     import { useAssignmentsStore } from '@/stores/assignments';
-    import PublisherSelector from '@/components/schedule-template/PublisherSelector.vue'
+    import PublisherSelector from '@/components/template-psp/PublisherSelector.vue'
 
     const props = defineProps({
         p: { type: Object }

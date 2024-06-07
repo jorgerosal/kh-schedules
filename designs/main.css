@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root
+{
+    --sqr: 100px;
+    --h-1: 35px;
+    --h-2: 40px;
+    --theme: #4F6BA6;
+    --theme-gems: #2a6b77;
+    --theme-ministry: #9b6d17;
+    --theme-living: #92101a;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body
+{
+    height: 100vh;
+    position: relative;
+}
+
+#app{
+    height: auto;
+    display: flex;
+    background: transparent;
+}

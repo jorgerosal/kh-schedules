@@ -23,7 +23,7 @@
 <script setup>
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
-    import PublisherListItem from '../schedule-template/PublisherListItem.vue';
+    import PublisherListItem from '../template-psp/PublisherListItem.vue';
 
 
     const congStore = useCongregationStore()
@@ -69,7 +69,7 @@
         display: block;
         font-size: 1.6rem;
         font-weight: 600;
-        color: #FEBE10;
+        color: #3DA8EA;
     }
 
     .pubs-cong

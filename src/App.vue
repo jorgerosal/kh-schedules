@@ -1,12 +1,10 @@
 <script setup>
-  import MainHeader from '@/components/schedule-template/MainHeader.vue';
-  import MeetingSections from '@/components/schedule-template/MeetingSections.vue';
-  import ScheduleContainer from '@/components/schedule-template/ScheduleContainer.vue';
+  import MidweekFSL from '@/components/templates/MidweekFSL.vue';
   import CongregationForm from '@/components/forms/CongregationForm.vue';
   import CongPublishers from './components/forms/CongPublishers.vue';
   import PublisherForm from './components/forms/PublisherForm.vue';
 
-  import { onMounted, ref } from 'vue';
+  import { onMounted } from 'vue';
   import { useFileStore } from './stores/files';
   import { useCongregationStore } from './stores/congregation';
   import { useAssignmentsStore } from './stores/assignments';
@@ -20,9 +18,7 @@
 
 
   const assignments = useAssignmentsStore()
-  const modals = ref({
-    show: false
-  })
+
 
   onMounted(async () => {
     await files.loadFiles();
@@ -49,15 +45,7 @@
 
   <!-- MWB FSL -->
   <template v-else>
-    <div id="template-bg">
-      <div id="fsl-mwb">
-        <article>
-          <MainHeader :modals="modals" />
-          <MeetingSections />
-          <ScheduleContainer />
-        </article>
-      </div>
-    </div>
+    <MidweekFSL />
   </template>
 
 </template>
