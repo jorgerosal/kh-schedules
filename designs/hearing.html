@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="hearing.css">
+    <title>Eskedyul</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+        :root {
+            --sqr: 100px;
+            --h-1: 35px;
+            --h-2: 40px;
+            --theme: #4F6BA6;
+            --theme-gems: #2a6b77;
+            --theme-ministry: #9b6d17;
+            --theme-living: #92101a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Open Sans", sans-serif;
+            font-optical-sizing: auto;
+        }
+
+        body {
+            height: 100vh;
+            position: relative;
+            font-size: small;
+        }
+
+        #app {
+            height: auto;
+            display: flex;
+            background: transparent;
+        }
+
+        #template-bg {
+            display: flex;
+            margin: auto;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgb(182, 182, 182);
+            overflow: auto;
+        }
+
+        #esk-mwb {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: auto;
+            background-color: rgb(182, 182, 182);
+            width: 1080px;
+
+            overflow: auto;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="template-bg">
+            <div id="esk-mwb">
+                <div class="page">
+                    <div class="page-header">
+                        <div class="page-header-cong">Central Congregation - Tacloban City</div>
+                        <div class="page-header-title">Eskedyol han Katirok ha Midweek</div>
+                    </div>
+                    <div class="weeks-wrapper">
+                        <div class="week-wrapper">
+                            <div class="semana">
+                                <div>
+                                    <div class="bold">
+                                        HUNYO 3-9 | SINEMANA NGA PAGBASA HA BIBLIA
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="assignments">
+                                        <div class="labels">Tsirman:</div>
+                                        <div>[Ngaran]</div>
+                                        <div class="labels">Magsaragdon ha Dugang nga Klase:</div>
+                                        <div>[Ngaran]</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro default-col-auxy">
+                                <div>0:00</div>
+                                <div>Karantahon 3</div>
+                                <div></div>
+                                <div class="flex">
+                                    <div>Pag-ampo:</div>
+                                    <div>Ngaran</div>
+                                </div>
+                            </div>
+                            <div class="intro default-col-auxy">
+                                <div>0:00</div>
+                                <div>Introduksyon ( 1min.) </div>
+                                <div></div>
+                                <div class="flex">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="submeeting-header gems">
+                                MGA BAHANDI TIKANG HA PULONG HAN DIYOS
+                            </div>
+                            <div>
+                                <div class="default-col-noauxy">
+                                    <div>0:00</div>
+                                    <div class="bold gems-text">1. Ulohan (10 min.) </div>
+                                    <div class="flex">
+                                        <div></div>
+                                        <div>Ngaran</div>
+                                    </div>
+                                </div>
+                                <div class="default-col-noauxy">
+                                    <div>0:00</div>
+                                    <div class="bold gems-text">2. Espirituwal nga mga Hiyas (10 min.) </div>
+                                    <div class="flex">
+                                        <div></div>
+                                        <div>Ngaran</div>
+                                    </div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div class="bold gems-text">3. Pagbasa ha Bibliya (4 min.) </div>
+                                    <div class="flex">
+                                        <div>Ngaran</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div>Ngaran</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submeeting-header ministry">
+                                MAGIN MAS EPEKTIBO HA MINISTERYO
+                            </div>
+                            <div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>4. Starting Conversation (3 min.) </div>
+                                    <div>Ngaran</div>
+                                    <div>Ngaran</div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>5. Starting Conversation (3 min.) </div>
+                                    <div>Ngaran</div>
+                                    <div>Ngaran</div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>6. Starting Conversation (3 min.) </div>
+                                    <div>Ngaran</div>
+                                    <div>Ngaran</div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>7. Starting Conversation (3 min.) </div>
+                                    <div>Ngaran</div>
+                                    <div>Ngaran</div>
+                                </div>
+                            </div>
+                            <div class="submeeting-header living">
+                                PAGKINABUHI SUGAD NGA MGA KRISTIANO
+                            </div>
+                            <div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div> Karantahon 87 </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>7. Padayon nga Ipakita an Gugma ha Iyo Pag-asawa </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>8. Lokal nga mga Panginahanglan </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>9. Pag-aram ha Biblia han Kongregasyon </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>Konklusyon </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>Karantahon 111 </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="week-wrapper">
+                            <div class="semana">
+                                <div>
+                                    <div>
+                                        [PETSA] | SINEMANA NGA PAGBASA HA BIBLIA
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="semana-bahin">
+                                        <div>Tsirman:</div>
+                                        <div>[Ngaran]</div>
+                                        <div>Magsaragdon ha Dugang nga Klase:</div>
+                                        <div>[Ngaran]</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="intro default-col-auxy">
+                                <div>0:00</div>
+                                <div>Karantahon 3</div>
+                                <div></div>
+                                <div class="flex">
+                                    <div>Pag-ampo:</div>
+                                    <div>Ngaran</div>
+                                </div>
+                            </div>
+                            <div class="intro default-col-auxy">
+                                <div>0:00</div>
+                                <div>Introduksyon ( 1min.) </div>
+                                <div></div>
+                                <div class="flex">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="submeeting-header gems">
+                                MGA BAHANDI TIKANG HA PULONG HAN DIYOS
+                            </div>
+                            <div>
+                                <div class="default-col-noauxy">
+                                    <div>0:00</div>
+                                    <div class="bold gems-text">1. Ulohan (10 min.) </div>
+                                    <div class="flex">
+                                        <div></div>
+                                        <div>Ngaran</div>
+                                    </div>
+                                </div>
+                                <div class="default-col-noauxy">
+                                    <div>0:00</div>
+                                    <div>2. Espirituwal nga mga Hiyas (10 min.) </div>
+                                    <div class="flex">
+                                        <div></div>
+                                        <div>Ngaran</div>
+                                    </div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>3. Pagbasa ha Bibliya (4 min.) </div>
+                                    <div class="flex">
+                                        <div>Ngaran</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div>Ngaran</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="submeeting-header ministry">
+                                MAGIN MAS EPEKTIBO HA MINISTERYO
+                            </div>
+                            <div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>4. Starting Conversation (3 min.) </div>
+                                    <div>Ngaran</div>
+                                    <div>Ngaran</div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>5. Starting Conversation (3 min.) </div>
+                                    <div>Ngaran</div>
+                                    <div>Ngaran</div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>6. Starting Conversation (3 min.) </div>
+                                    <div>Ngaran</div>
+                                    <div>Ngaran</div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>7. Starting Conversation (3 min.) </div>
+                                    <div>Ngaran</div>
+                                    <div>Ngaran</div>
+                                </div>
+                            </div>
+                            <div class="submeeting-header living">
+                                PAGKINABUHI SUGAD NGA MGA KRISTIANO
+                            </div>
+                            <div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div> Karantahon 87 </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>7. Padayon nga Ipakita an Gugma ha Iyo Pag-asawa </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>8. Lokal nga mga Panginahanglan </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>9. Pag-aram ha Biblia han Kongregasyon </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>Konklusyon </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="default-col-auxy">
+                                    <div>0:00</div>
+                                    <div>Karantahon 111 </div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="page">
+                    <div class="header">
+
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -22,12 +22,21 @@ export const useCongregationStore = defineStore('congregation', () => {
         { code: "cbs", display: "CBS Conductor" },
     ])
 
-    const languages = ref ([
-        {code: 'psp', lang: 'Filipino Sign Language'},
-        {code: 'ceb', lang: 'Cebuano'},
-        {code: 'war', lang: 'Waray-waray'},
-        {code: 'tl', lang: 'Tagalog'},
+    const languages = ref([
+        { code: 'ceb', support: false, lang: 'Cebuano' },
+        { code: 'psp', support: true, lang: 'Filipino Sign Language' },
+        { code: 'war', support: false, lang: 'Waray-waray' },
+        { code: 'tl', support: false, lang: 'Tagalog' },
     ]);
+
+    const ministryClasses = ref([
+        { id: 1, display: "Main Hall Only" },
+        { id: 2, display: "With Auxillary Class" },
+    ])
+
+    const supportedLanguages = computed(() => {
+        return languages.value.filter(l => l.support)
+    })
 
     const publisherNames = computed(() => {
         const pubs = congregation.value?.publishers ?? []
@@ -51,6 +60,20 @@ export const useCongregationStore = defineStore('congregation', () => {
         return pubs.filter(p => p.roles && (p.roles.includes('elder') || p.roles.includes('ms')));
     })
 
+    const getStoredLanguage = computed(() => {
+        if (!congregation.value) return null
+
+        const storedLang = congregation.value.lang
+        return storedLang ? languages.value.find(l => l.code == storedLang) : null
+    })
+
+    const getStoredMinistryClass = computed(() => {
+        if (!congregation.value) return null
+
+        const storedClass = congregation.value.class
+        return storedClass ? ministryClasses.value.find(c => c.id == storedClass) : null
+    })
+
     async function retrieveLocal() {
         const storedCongInfo = localStorage.getItem(LOCAL_KEY);
 
@@ -66,7 +89,7 @@ export const useCongregationStore = defineStore('congregation', () => {
     }
 
     function setCongName(name) {
-        congregation.value['name'] = name 
+        congregation.value['name'] = name
         storeToLocal()
     }
 
@@ -82,7 +105,7 @@ export const useCongregationStore = defineStore('congregation', () => {
     function updatePublisher(pub) {
         const pubs = congregation.value.publishers
         const target = pubs.find(p => p.name == pub.name)
-        
+
         if (target) {
             target.name = pub.name;
             target.roles = pub.roles;
@@ -93,9 +116,25 @@ export const useCongregationStore = defineStore('congregation', () => {
         storeToLocal();
     }
 
+    function setLanguage(code) {
+        congregation.value['lang'] = code
+        storeToLocal()
+    }
+
+    function setMinistryClass(code) {
+        congregation.value['class'] = code
+        storeToLocal()
+    }
+
     function removePublisher(pub) {
         congregation.value.publishers = congregation.value.publishers.filter(f => f.name !== pub.name);
     }
-    
-    return { congregation, congName, setCongName, publisherNames, publishers, roles, eldersMs, retrieveLocal, storeToLocal, addPublisher, updatePublisher, removePublisher, languages }
+
+    return {
+        congregation, congName, setCongName,
+        publisherNames, publishers, roles, eldersMs, addPublisher, updatePublisher, removePublisher,
+        languages, supportedLanguages, getStoredLanguage, setLanguage,
+        ministryClasses, setMinistryClass, getStoredMinistryClass,
+        retrieveLocal, storeToLocal,
+    }
 })

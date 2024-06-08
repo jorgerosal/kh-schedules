@@ -7,7 +7,7 @@
                     <span class="pubs-cong">{{ congStore.congName }}</span>
                 </div>
                 <div class="btns">
-                    <button class="btn-md" @click="showPubForm">New Person</button>
+                    <button class="btn-md" @click="showPubForm">Add Student</button>
                     <button class="btn-md" @click="backToSched">Go To Schedule</button>
                 </div>
             </div>
@@ -23,7 +23,7 @@
 <script setup>
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
-    import PublisherListItem from '../schedule-template/PublisherListItem.vue';
+    import PublisherListItem from '../template-psp/PublisherListItem.vue';
 
 
     const congStore = useCongregationStore()
@@ -69,7 +69,7 @@
         display: block;
         font-size: 1.6rem;
         font-weight: 600;
-        color: #FEBE10;
+        color: #3DA8EA;
     }
 
     .pubs-cong

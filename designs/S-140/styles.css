@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root
+{
+    --sqr: 100px;
+    --h-1: 35px;
+    --h-2: 40px;
+    --theme: #4F6BA6;
+    --theme-gems: #2a6b77;
+    --theme-ministry: #9b6d17;
+    --theme-living: #92101a;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body
+{
+    height: 100vh;
+    position: relative;
+}
+
+#app
+{
+    height: auto;
+    display: flex;
+    background: transparent;
+}
+
+#template-bg
+{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    background-color: rgb(182, 182, 182);
+    overflow: auto;
+}
+
+#pages
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.page
+{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    padding: 40px;
+    width: 1240px;
+    height: 1754px;
+    background: white;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    border-bottom: 5px double gray;
+}
+
+.title
+{
+    font-size: 22px;
+}
+
+.contents
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.page:not(:last-child)
+{
+    page-break-after: always;
+}
+
+.grid-3
+{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.grid-2
+{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.grid-title
+{
+    display: grid;
+    grid-template-columns: 20px 1fr;
+    gap: 15px;
+    align-items: flex-start;
+
+}
+
+.student {
+    font-size: 15px;
+}
+
+.label
+{
+    color: gray;
+    font-size: small;
+}
+
+.right-align
+{
+    text-align: right;
+}
+
+.bold
+{
+    font-weight: 600;
+}
+
+.font-gems
+{
+    color: var(--theme-gems);
+}
+
+.bg-gems
+{
+    background: var(--theme-gems);
+    color: white;
+    padding: 3.5px 8px;
+}
+
+.font-ministry
+{
+    color: var(--theme-ministry);
+}
+
+.bg-ministry {
+    background: var(--theme-ministry);
+    color: white;
+    padding: 3.5px 8px;
+}
+
+.font-living
+{
+    color: var(--theme-living);
+}
+
+.bg-living {
+    background: var(--theme-living);
+    color: white;
+    padding: 3.5px 8px;
+}
+
+@media print
+{
+    @page
+    {
+        size: A4;
+        margin: 40px;
+    }
+
+    #template-bg
+    {
+        background-color: white;
+    }
+
+    #pages
+    {
+        gap: 0;
+        margin: 0;
+    }
+
+    .page
+    {
+        width: 100%;
+        /* height: auto; */
+        padding: 0;
+        box-shadow: none;
+        page-break-after: always;
+    }
+}

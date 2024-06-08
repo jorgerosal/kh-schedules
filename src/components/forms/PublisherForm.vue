@@ -3,7 +3,7 @@
         <div id="form-publisher">
             <div class="form-header">{{ title }}</div>
             <div>
-                <input type="text" placeholder="Enter name" v-model="pubName">
+                <input ref="pubInput" type="text" placeholder="Enter name" v-model="pubName">
                 <div class="privileges">
                     <div>Privileges</div>
                     <div class="roles">
@@ -20,8 +20,10 @@
                 <button v-show="viewStore.pubFormMode == 'new'" class="btn-md-inv" @click="addPublisher">
                     Add Publisher
                 </button>
-                <button v-show="viewStore.pubFormMode == 'update'" class="btn-md-inv" @click="updatePublisher">Update Publisher</button>
-                <button v-show="viewStore.pubFormMode == 'update'" class="btn-md-inv" @click="deletePublisher">Delete Publisher</button>
+                <button v-show="viewStore.pubFormMode == 'update'" class="btn-md-inv" @click="updatePublisher">Update
+                    Publisher</button>
+                <button v-show="viewStore.pubFormMode == 'update'" class="btn-md-inv" @click="deletePublisher">Delete
+                    Publisher</button>
                 <button class="btn-md" @click="closeMe">Discard</button>
             </div>
         </div>
@@ -38,15 +40,24 @@
     const congStore = useCongregationStore()
 
     const pubName = ref(null)
+    const pubInput = ref(null)
+
+    const focusInput = () => {
+        if (pubInput.value) {
+            pubInput.value.focus();
+        }
+    };
 
     const selectedRoles = ref(["demo"])
     const title = computed(() => {
         if (viewStore.pubFormMode == 'new') {
-            return "New Person"
+            return "New Student"
         } else {
-            return "Update Person"
+            return "Update Student"
         }
     })
+
+    onMounted(focusInput);
 
     function closeMe() {
         viewStore.pubForm = false
@@ -101,7 +112,7 @@
 
     .form-header
     {
-        color: #FEBE10;
+        color: #3DA8EA;
         font-weight: 600;
         font-size: large;
     }

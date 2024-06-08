@@ -4,15 +4,12 @@
             <ScheduleByWeek :w="w" :i="i" :weeks="weeksCount" />
         </template>
     </div>
-    <div id="printer">
-        <button @click="print">Print</button>
-    </div>
 </template>
 
 <script setup>
     import { useFileStore } from '@/stores/files';
     import { computed } from 'vue';
-    import ScheduleByWeek from '@/components/schedule-template/ScheduleByWeek.vue'
+    import ScheduleByWeek from '@/components/template-psp/ScheduleByWeek.vue'
 
     const fileStore = useFileStore()
 
@@ -23,8 +20,4 @@
     const weeksCount = computed(()=> {
         return weeks.value.length
     })
-
-    function print() {
-        window.print();
-    }
 </script>
