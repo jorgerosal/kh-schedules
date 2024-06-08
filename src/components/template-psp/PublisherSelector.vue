@@ -1,6 +1,9 @@
 <template>
     <div id="assignee-selector">
         <div class="wrapper">
+            <div class="close" @click.stop="$emit('hideMe')">
+                <IconTimes/>
+            </div>
             <!-- <div v-show="!noPublishers" class="controls">
                 <input type="search" name="" id="" placeholder="Find participant">
             </div> -->
@@ -17,8 +20,8 @@
                 </div>
 
                 <div v-show="!noPublishers" class="cntrls">
-                    <button class="btn-sm" @click.prevent="openPubForm">Add Publisher</button>
-                    <button class="btn-sm" @click.prevent="showPubList">See Publishers</button>
+                    <button class="btn-sm" @click.prevent="openPubForm">Add Student</button>
+                    <button class="btn-sm" @click.prevent="showPubList">Manage Students</button>
                 </div>
 
             </div>
@@ -31,6 +34,7 @@
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
     import { computed, ref, onMounted } from 'vue';
+    import IconTimes from '../icons/IconTimes.vue';
 
     const DEMO_ASSIGN_SEPARATOR = ' & '
     const congStore = useCongregationStore()
@@ -237,7 +241,7 @@
 
     .publisher-option:not(:first-child)
     {
-        border-top: 1px dotted #febf104d;
+        border-top: 1px dotted #3da8ea5e;
     }
 
     .pubname
@@ -248,7 +252,7 @@
 
     .pubname:hover
     {
-        color: #FEBE10;
+        color: #3DA8EA;
         font-weight: 600
     }
 
@@ -276,7 +280,7 @@
         border-radius: 5px;
         font-size: small;
         padding: 5px 25px;
-        background: orange;
+        background: #3DA8EA;
         color: white;
         border: none;
         transition: ease-in-out .2s;
@@ -284,7 +288,7 @@
 
     .no-pubs button:hover
     {
-        background: rgb(221, 144, 0);
+        background: #3DA8EA;
     }
 
     .cntrls
@@ -297,9 +301,21 @@
     .demo-assignment
     {
         font-size: 10px;
-        color: #FEBE10;
-        /* border: 1px solid #FEBE10; */
+        color: #3DA8EA;
         padding: 0 4px;
         border-radius: 3px;
+    }
+
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 18px;
+        width: 18px;
+        opacity: .4;
+    }
+
+    .close:hover {
+        opacity: .7;
     }
 </style>

@@ -15,18 +15,22 @@
                 </div>
                 <div class="inputs">
                     <input class="input" type="text" placeholder="Congregation" v-model="cong">
-                    <div class="select">
-                        <input class="input" type="text" placeholder="Meeting Language" value="Filipino Sign Language">
-                        <div class="dd-holder">
-                            <div class="dd-items" v-for="l in congStore.supportedLanguages" :key="l.code">
+                    <div class="select" @mouseleave="hideLangOptions">
+                        <input class="input" type="text" placeholder="Select Meeting Language" readonly
+                            @click="showLangOptions" :value="congStore.getStoredLanguage?.lang">
+                        <div :class="langClasses">
+                            <div class="dd-items" v-for="l in congStore.supportedLanguages" :key="l.code"
+                                @click="setLanguage(l.code)">
                                 {{ l.lang }}
                             </div>
                         </div>
                     </div>
-                    <div class="select">
-                        <input class="input" type="text" placeholder="Ministry Classes" value="Main Hall Only">
-                        <div class="dd-holder">
-                            <div class="dd-items" v-for="c in congStore.ministryClasses" :key="c.id"> 
+                    <div class="select" @mouseleave="hideClassOptions">
+                        <input class="input" type="text" placeholder="Ministry Classes"
+                            :value="congStore.getStoredMinistryClass?.display" @focus="showClassOptions" readonly>
+                        <div :class="classClasses">
+                            <div class="dd-items" v-for="c in congStore.ministryClasses" :key="c.id"
+                                @click="setMinistryClass(c.id)">
                                 {{ c.display }}
                             </div>
                         </div>
@@ -46,17 +50,59 @@
 <script setup>
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
-    import { ref } from 'vue';
+    import { computed, ref } from 'vue';
 
     const viewStore = useViewStore()
+    const ddLangs = ref(false)
+    const ddClasses = ref(false)
 
     const congStore = useCongregationStore()
     const cong = ref(null)
+
+    const langClasses = computed(() => {
+        return [
+            'dd-holder', { 'show': ddLangs.value }
+        ]
+    })
+
+    const classClasses = computed(() => {
+        return [
+            'dd-holder', { 'show': ddClasses.value }
+        ]
+    })
+
 
     function assignCongName() {
         congStore.setCongName(cong.value);
         congStore.storeToLocal();
         viewStore.congregationForm = false
+        viewStore.initialStorageCheck = true
+    }
+
+    function showLangOptions() {
+        ddLangs.value = true
+    }
+
+    function hideLangOptions() {
+        ddLangs.value = false
+    }
+
+    function showClassOptions() {
+        ddClasses.value = true
+    }
+
+    function hideClassOptions() {
+        ddClasses.value = false
+    }
+
+    function setLanguage(code) {
+        congStore.setLanguage(code)
+        hideLangOptions()
+    }
+
+    function setMinistryClass(code) {
+        congStore.setMinistryClass(code)
+        hideClassOptions()
     }
 </script>
 
@@ -147,6 +193,7 @@
         font-size: 15px;
         font-weight: 600;
         color: #3DA8EA;
+        cursor: pointer;
 
     }
 
@@ -173,7 +220,7 @@
         cursor: pointer !important;
     }
 
-    .select:hover .dd-holder
+    .dd-holder.show
     {
         display: flex;
         opacity: 1;

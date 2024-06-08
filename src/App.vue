@@ -16,7 +16,6 @@
   const files = useFileStore()
   const cong = useCongregationStore()
 
-
   const assignments = useAssignmentsStore()
 
 
@@ -26,6 +25,8 @@
     cong.retrieveLocal();
     assignments.retrieveLocal();
     viewStore.congregationForm = cong.congName == null || typeof cong.congName == 'undefined'
+
+    if (!viewStore.congregationForm) viewStore.initialStorageCheck = true
   })
 </script>
 
@@ -44,7 +45,7 @@
   </template>
 
   <!-- MWB FSL -->
-  <template v-else>
+  <template v-else-if="viewStore.initialStorageCheck">
     <MidweekFSL />
   </template>
 

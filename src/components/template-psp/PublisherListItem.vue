@@ -46,6 +46,10 @@
         gap: 4px
     }
 
+    .pub-name {
+        font-weight: 600;
+    }
+
     .pub-row:hover
     {
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -64,8 +68,8 @@
         font-size: x-small;
         padding: 0 5px;
         background: white;
-        border: 1px solid #FEBE10;
-        color: #FEBE10;
+        border: 1px solid #3DA8EA;
+        color: #3DA8EA;
         border-radius: 5px;
         display: flex;
         place-items: center;

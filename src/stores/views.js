@@ -7,6 +7,7 @@ export const useViewStore = defineStore('views', () => {
     const pubForm = ref(false)
     const editPublisher = ref({})
     const pubFormMode = ref('new')
+    const initialStorageCheck = ref(false)
 
-    return { publishers, congregationForm, pubForm, pubFormMode, editPublisher }
+    return { publishers, congregationForm, pubForm, pubFormMode, editPublisher, initialStorageCheck }
 })

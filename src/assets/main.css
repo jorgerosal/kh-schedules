@@ -165,7 +165,7 @@ article
 
 .select-option:hover
 {
-    background: orange;
+    background: #3DA8EA;
     color: white;
 }
 
@@ -335,7 +335,7 @@ section
 
 .assign-to:hover
 {
-    color: orange;
+    color: #3DA8EA;
     font-weight: 500;
 }
 
@@ -451,7 +451,7 @@ section
 
 .btn-md-inv:hover
 {
-    background: #ffa600;
+    background: #54b4f0;
 }
 
 #cong-form .h2
@@ -516,17 +516,21 @@ section
 }
 
 
-
-
 @media print
 {
+    @page {
+        size: A4;
+    }
+
     body
     {
         -webkit-print-color-adjust: exact;
+        height: 100%;
     }
 
     #app {
         width: 1080px;
+        overflow: hidden;
     }
 
     .headbar {
@@ -536,9 +540,30 @@ section
     #fsl-mwb, #template-bg
     {
         padding: 0;
-        
+        height: 100%;
+        overflow: hidden;
         border: none;
     }
 
 
 }
+
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

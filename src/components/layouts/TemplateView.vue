@@ -13,23 +13,32 @@
             </div>
 
             <div class="setters">
-                <span>Language</span>
-                <select>
+                <!-- <span>Language</span>
+                <select @change="" >
                     <option :value="lang.code" v-for="lang in cong.supportedLanguages" :key="lang.code">
                         {{ lang.lang }}
                     </option>
-                </select>
+                </select> -->
             </div>
 
             <div class="setters">
-                <span>Template</span>
+                <!-- <span>Template</span>
                 <select>
                     <option v-for="t in file.supportedTemplates" :value="t.code">{{ t.name }}</option>
-                </select>
+                </select> -->
             </div>
 
-            <div id="printer" @click="print">
-                <button>Print</button>
+            <div id="printer">
+                <button @click="print">
+                    <span class="icon">
+                        <IconPrinter/>
+                    </span>
+                    Print
+                </button>
+            </div>
+
+            <div id="students">
+                <button @click="toStudents">Students</button>
             </div>
         </div>
     </div>
@@ -39,15 +48,24 @@
 <script setup>
     import { useFileStore } from '@/stores/files';
     import { useCongregationStore } from '@/stores/congregation';
+    import { useViewStore } from '@/stores/views';
     import { ref, watch } from 'vue';
+    import IconPrinter from '../icons/IconPrinter.vue';
 
     const file = useFileStore();
-    const cong = useCongregationStore()
+    const cong = useCongregationStore();
+    const view = useViewStore()
     const selectedMonth = ref(file.selectedMonth?.content?.period);
+    const selectedLanguage = ref(cong.getStoredLanguage?.code);
 
     function loadMonth() {
         file.setMWBMonth(selectedMonth.value);
     }
+
+    // function loadLangauge() {
+    //     cong.setLanguage(selectedLanguage.value)
+    //     console.log(selectedLanguage.value.code);
+    // }
 
     // Watch for changes in the file's selected month and update the local selectedMonth
     watch(() => file.selectedMonth?.content?.period, (newValue) => {
@@ -56,6 +74,10 @@
 
     function print() {
         window.print();
+    }
+
+    function toStudents() {
+        view.publishers = true
     }
 </script>
 
@@ -74,7 +96,7 @@
     .set-wrappers
     {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr .5fr;
+        grid-template-columns: 1fr 1fr 1fr .5fr .5fr;
         margin: auto;
         height: 100%;
         max-width: 1080px;
@@ -90,16 +112,15 @@
     .setters
     {
         display: flex;
-        gap: 15px;
+        gap: 0px;
         align-items: center;
         outline: none;
-        /* border: 1px solid white; */
     }
 
     .setters span
     {
         color: rgb(192, 192, 192);
-        width: 70px;
+        width: 50px;
     }
 
     select
@@ -109,7 +130,7 @@
         background: rgb(230, 230, 230);
         border-radius: 4px;
         border: none;
-        appearance: none;  
+        appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
         padding-right: 20px;
@@ -119,27 +140,56 @@
         background-size: 5px;
     }
 
-    #printer
+    #printer,
+    #students
     {
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
     }
 
+
+
     #printer button
     {
-        border: 1px solid orange;
-        padding: 6px 50px;
+        border: 1px solid #3DA8EA;
+        padding: 6px 20px;
         font-size: small;
         border-radius: 4px;
-        background: orange;
+        background: #3DA8EA;
         color: white;
+        cursor: pointer;
+        transition: ease-in-out .2s;
+        display: flex;
+        gap: 10px
+
+    }
+
+    #printer button svg {
+        height: auto;
+        /* border: 1px solid red */
+    }
+
+    #students button
+    {
+        border: 1px solid #3DA8EA;
+        padding: 6px 25px;
+        font-size: small;
+        border-radius: 4px;
+        background: transparent;
+        color: #3DA8EA;
         cursor: pointer;
         transition: ease-in-out .2s;
     }
 
     #printer button:hover
     {
-        background: rgb(255, 179, 39);
+        background: #3288bd;
+    }
+
+    #students button:hover
+    {
+        color: white;
+        background: #3DA8EA;
     }
 </style>

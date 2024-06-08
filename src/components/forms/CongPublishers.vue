@@ -7,7 +7,7 @@
                     <span class="pubs-cong">{{ congStore.congName }}</span>
                 </div>
                 <div class="btns">
-                    <button class="btn-md" @click="showPubForm">New Person</button>
+                    <button class="btn-md" @click="showPubForm">Add Student</button>
                     <button class="btn-md" @click="backToSched">Go To Schedule</button>
                 </div>
             </div>

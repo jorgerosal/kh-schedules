@@ -14,7 +14,7 @@
             <div class="generic-label">{{ p.reference }}</div>
             <div class="assignee" @click="showSelector">
                 <div :class="assignClasses">{{ displayAssignee }}</div>
-                <PublisherSelector v-if="selector.show" :part="p" @mouseleave="hideSelector" :me="selector" :assignee="partAssignedTo"/>
+                <PublisherSelector v-if="selector.show" :part="p" @mouseleave="hideSelector" :me="selector" :assignee="partAssignedTo" @hide-me="hideSelector"/>
 
             </div>
         </span>

@@ -101,7 +101,7 @@
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
-                        "reference": "lfb ?????",
+                        "reference": "lfb 31 & 32",
                         "roles": [
                             "cbs"
                         ]
@@ -236,7 +236,7 @@
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
-                        "reference": "lfb ?????",
+                        "reference": "lfb 33 & 34",
                         "roles": [
                             "cbs"
                         ]
@@ -335,7 +335,7 @@
                         "time": 3,
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
-                        "reference": "lmd 1:5)",
+                        "reference": "lmd 1:5",
                         "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
                         "roles": [
                             "demo"
@@ -371,7 +371,7 @@
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
-                        "reference": "lfb ?????",
+                        "reference": "lfb 35 & 36",
                         "roles": [
                             "cbs"
                         ]
@@ -403,28 +403,43 @@
                     {
                         "id": "202407.4.0",
                         "time": 1,
-                        "reference": "Introduction"
+                        "reference": "Introduction",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.4.1",
                         "time": 10,
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024244/univ/art/202024244_univ_sqs_lg.jpg",
                         "title": "Jehovah Daily Carries Our Load",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.4.2",
                         "time": 10,
                         "reference": "Ps 68:18​​",
                         "title": "Spiritual Gems",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.4.3",
                         "time": 4,
                         "reference": "Ps 66:0-15",
                         "title": "Bible Reading",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "br"
+                        ]
                     }
                 ],
                 "ministry": [
@@ -434,7 +449,10 @@
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
                         "reference": "lmd 5:3",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     },
                     {
                         "id": "202407.4.5",
@@ -442,7 +460,10 @@
                         "title": "Following Up",
                         "class": "part-title-ministry",
                         "reference": "lmd 9:3",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     },
                     {
                         "id": "202407.4.6",
@@ -450,7 +471,10 @@
                         "title": "Making Disciples",
                         "class": "part-title-ministry",
                         "reference": "lff 15:Title, 1-3 (th 8)",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lff/univ/wpub/lff_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lff/univ/wpub/lff_univ_lg.jpg",
+                        "roles": [
+                            "demo"
+                        ]
                     }
                 ],
                 "living": [
@@ -459,7 +483,11 @@
                         "time": 15,
                         "title": "Could You Make Someone’s Load Lighter?",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024244/univ/art/202024244_univ_cnt_2_lg.jpg"
+                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024244/univ/art/202024244_univ_cnt_2_lg.jpg",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.4.8",
@@ -467,12 +495,19 @@
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
-                        "reference": "lfb ?????"
+                        "reference": "lfb 37 & 38",
+                        "roles": [
+                            "cbs"
+                        ]
                     },
                     {
                         "id": "202407.4.9",
                         "time": 3,
-                        "reference": "Conclusion"
+                        "reference": "Conclusion",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     }
                 ]
             }
@@ -492,28 +527,43 @@
                     {
                         "id": "202407.5.0",
                         "time": 1,
-                        "reference": "Introduction"
+                        "reference": "Introduction",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.5.1",
                         "time": 10,
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024245/univ/art/202024245_univ_sqs_lg.jpg",
                         "title": "How Events in Jesus’ Life Were Foretold in Psalm 69",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.5.2",
                         "time": 10,
                         "reference": "Ps 69:30, 31​​​",
                         "title": "Spiritual Gems",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.5.3",
                         "time": 4,
                         "reference": "Ps 69:0-13",
                         "title": "Bible Reading",
-                        "class": "part-title-gems"
+                        "class": "part-title-gems",
+                        "roles": [
+                            "br"
+                        ]
                     }
                 ],
                 "ministry": [
@@ -523,7 +573,11 @@
                         "title": "Patience​—What Jesus Did",
                         "class": "part-title-ministry",
                         "reference": "lmd 8:1-2",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.5.5",
@@ -531,7 +585,11 @@
                         "title": "Patience​—Imitate Jesus",
                         "class": "part-title-ministry",
                         "reference": "lmd 8:3-5 and “See Also.”",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg"
+                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     }
                 ],
                 "living": [
@@ -539,14 +597,21 @@
                         "id": "202407.5.6",
                         "time": 5,
                         "title": "Local Needs",
-                        "class": "part-title-living"
+                        "class": "part-title-living",
+                        "roles": [
+                            "elder"
+                        ]
                     },
                     {
                         "id": "202407.5.7",
                         "time": 10,
                         "title": "Principles for Family Worship Evening",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024245/sign/art/202024245_sign_cnt_2_lg.jpg"
+                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/202024245/sign/art/202024245_sign_cnt_2_lg.jpg",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     },
                     {
                         "id": "202407.5.8",
@@ -554,12 +619,19 @@
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
                         "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
-                        "reference": "lfb ?????"
+                        "reference": "lfb Introduction, Section 7, 39 & 40",
+                        "roles": [
+                            "cbs"
+                        ]
                     },
                     {
                         "id": "202407.5.9",
                         "time": 3,
-                        "reference": "Conclusion"
+                        "reference": "Conclusion",
+                        "roles": [
+                            "elder",
+                            "ms"
+                        ]
                     }
                 ]
             }
