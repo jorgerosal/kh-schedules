@@ -4,6 +4,9 @@
             <div class="close" @click.stop="$emit('hideMe')">
                 <IconTimes/>
             </div>
+            <div class="head-title">
+                Select Students
+            </div>
             <!-- <div v-show="!noPublishers" class="controls">
                 <input type="search" name="" id="" placeholder="Find participant">
             </div> -->
@@ -15,8 +18,8 @@
                 </div>
 
                 <div v-show="noPublishers" class="no-pubs">
-                    <span>No publishers or students added yet!</span>
-                    <button @click="viewPublisherList">Set Up</button>
+                    <span>No students added yet that can be assigned to this part!</span>
+                    <button @click="viewPublisherList">Set Up Students</button>
                 </div>
 
                 <div v-show="!noPublishers" class="cntrls">
@@ -204,6 +207,14 @@
         position: relative;
     }
 
+    .head-title {
+        font-weight: 600;
+        color: gray;
+        width: 100%;
+        padding: 4px;
+        box-shadow: 0 3px 2px -2px gray;
+    }
+
     .controls
     {
         display: flex;
@@ -261,9 +272,6 @@
         font-size: 15px;
         padding: 5px;
         flex: 1;
-        align-self: center;
-        align-items: center;
-        justify-items: center;
         display: flex;
         flex-direction: column;
         gap: 12px;
@@ -271,7 +279,7 @@
 
     .no-pubs span
     {
-        text-align: center
+        text-align: left
     }
 
     .no-pubs button
@@ -308,10 +316,10 @@
 
     .close {
         position: absolute;
-        top: 5px;
-        right: 5px;
-        height: 18px;
-        width: 18px;
+        top: 12px;
+        right: 10px;
+        height: 16px;
+        width: 16px;
         opacity: .4;
     }
 

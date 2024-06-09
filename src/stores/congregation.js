@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useCongregationStore = defineStore('congregation', () => {
@@ -23,15 +23,15 @@ export const useCongregationStore = defineStore('congregation', () => {
     ])
 
     const languages = ref([
-        { code: 'ceb', support: false, lang: 'Cebuano' },
+        { code: 'ceb', support: true, lang: 'Cebuano' },
         { code: 'psp', support: true, lang: 'Filipino Sign Language' },
-        { code: 'war', support: false, lang: 'Waray-waray' },
+        { code: 'war', support: true, lang: 'Waray-waray' },
         { code: 'tl', support: false, lang: 'Tagalog' },
     ]);
 
     const ministryClasses = ref([
         { id: 1, display: "Main Hall Only" },
-        { id: 2, display: "With Auxillary Class" },
+        // { id: 2, display: "With Auxillary Class" },
     ])
 
     const supportedLanguages = computed(() => {
@@ -129,6 +129,11 @@ export const useCongregationStore = defineStore('congregation', () => {
     function removePublisher(pub) {
         congregation.value.publishers = congregation.value.publishers.filter(f => f.name !== pub.name);
     }
+
+    watch(
+        () => congregation.value.name,
+        () => storeToLocal()
+    );
 
     return {
         congregation, congName, setCongName,

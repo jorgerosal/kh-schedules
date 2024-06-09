@@ -20,9 +20,9 @@
 
 
   onMounted(async () => {
+    await cong.retrieveLocal();
     await files.loadFiles();
     files.setMWBMonth();
-    cong.retrieveLocal();
     assignments.retrieveLocal();
     viewStore.congregationForm = cong.congName == null || typeof cong.congName == 'undefined'
 
