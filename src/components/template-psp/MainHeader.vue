@@ -8,7 +8,7 @@
                 <input type="text" placeholder="Provide your congregation here! " :value="congregation.congName"
                     @input="updateCongName">
             </div>
-            <div class="details-title" :style="bg">Our Christian Life and Ministry Meeting Schedule</div>
+            <div class="details-title" :style="bg">{{ file.selectedMonth.content?.title }}</div>
             <div class="details-month" v-if="true">
                 <div id="active-month">{{ file.selectedMonth.content?.display }}</div>
             </div>

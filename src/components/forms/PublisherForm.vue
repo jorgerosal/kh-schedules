@@ -5,7 +5,10 @@
             <div>
                 <input ref="pubInput" type="text" placeholder="Enter name" v-model="pubName">
                 <div class="privileges">
-                    <div>Privileges</div>
+                    <div class="section-header">
+                        Privileges
+                        <span>What parts can this student be assigned?</span>
+                    </div>
                     <div class="roles">
 
                         <span class="field" v-for="r in congStore.roles" :key="r.code">
@@ -16,15 +19,24 @@
                 </div>
             </div>
 
-            <div class="btns">
-                <button v-show="viewStore.pubFormMode == 'new'" class="btn-md-inv" @click="addPublisher">
-                    Add Publisher
-                </button>
-                <button v-show="viewStore.pubFormMode == 'update'" class="btn-md-inv" @click="updatePublisher">Update
-                    Publisher</button>
-                <button v-show="viewStore.pubFormMode == 'update'" class="btn-md-inv" @click="deletePublisher">Delete
-                    Publisher</button>
-                <button class="btn-md" @click="closeMe">Discard</button>
+            <div class="btns-between">
+                <div class="btns">
+                    <button v-show="viewStore.pubFormMode == 'new'" class="btn-md-inv btn-primary"
+                        @click="addPublisher">
+                        Add Student
+                    </button>
+                    <button v-show="viewStore.pubFormMode == 'update'" class="btn-md-inv btn-primary"
+                        @click="updatePublisher">
+                        Update Student
+                    </button>
+                    <button class="btn-md" @click="closeMe">Discard</button>
+                </div>
+                <div class="btns">
+                    <button v-show="viewStore.pubFormMode == 'update'" class="btn-md-inv btn-warning"
+                        @click="deletePublisher">
+                        Delete Student
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -117,10 +129,33 @@
         font-size: large;
     }
 
+    .section-header
+    {
+        color: #3DA8EA;
+        font-weight: 600;
+        font-size: medium;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .section-header span
+    {
+        color: rgb(175, 175, 175);
+        font-weight: 400;
+        font-size: small;
+    }
+
     .btns
     {
         display: flex;
         gap: 10px;
+    }
+
+    .btns-between
+    {
+        display: flex;
+        justify-content: space-between;
     }
 
     .roles
@@ -137,10 +172,11 @@
         font-size: small;
         justify-content: flex-start;
         gap: 5px;
+        cursor: pointer;
     }
 
     .privileges
     {
-        padding: 20px;
+        padding: 20px 10px;
     }
 </style>

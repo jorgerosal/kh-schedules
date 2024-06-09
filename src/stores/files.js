@@ -1,5 +1,6 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import { useCongregationStore } from './congregation';
 
 export const useFileStore = defineStore('files', () => {
     const month = ref();
@@ -13,8 +14,26 @@ export const useFileStore = defineStore('files', () => {
         return templates.value.filter(t => t.supported)
     })
 
+    const jsonFilesCeb = import.meta.glob('@/lib/ceb/*.json');
+    const jsonFilesPsp = import.meta.glob('@/lib/psp/*.json');
+    const jsonFilesWar = import.meta.glob('@/lib/war/*.json');
+    const jsonFilesTl = import.meta.glob('@/lib/tl/*.json');
+
     async function loadFiles() {
-        const jsonFiles = import.meta.glob('@/lib/psp/*.json');
+        const congregationStore = useCongregationStore();
+        const lang = congregationStore.getStoredLanguage?.code;
+
+        let jsonFiles;
+        if (lang === 'ceb') {
+            jsonFiles = jsonFilesCeb;
+        } else if (lang === 'psp') {
+            jsonFiles = jsonFilesPsp;
+        } else if (lang === 'war') {
+            jsonFiles = jsonFilesWar;
+        } else if (lang === 'tl') {
+            jsonFiles = jsonFilesTl;
+        }
+
         availableMonths.value = []
         for (const path in jsonFiles) {
             const fileName = path.split('/').pop();
@@ -32,7 +51,9 @@ export const useFileStore = defineStore('files', () => {
 
     async function setMWBMonth(monthNum) {
         if (!monthNum) {
-            month.value = availableMonths.value[0].content.period
+            if (availableMonths.value[0]) {
+                month.value = availableMonths.value[0].content.period
+            }
         } else {
             month.value = monthNum;
         }

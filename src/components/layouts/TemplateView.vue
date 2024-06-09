@@ -11,34 +11,28 @@
                     </template>
                 </select>
             </div>
+            <div class="actions">
+                <div id="printer">
+                    <button @click="print">
+                        <span class="icon">
+                            <IconPrinter />
+                        </span>
+                        Print
+                    </button>
+                </div>
 
-            <div class="setters">
-                <!-- <span>Language</span>
-                <select @change="" >
-                    <option :value="lang.code" v-for="lang in cong.supportedLanguages" :key="lang.code">
-                        {{ lang.lang }}
-                    </option>
-                </select> -->
-            </div>
+                <div id="students">
+                    <button @click="toStudents">Students</button>
+                </div>
 
-            <div class="setters">
-                <!-- <span>Template</span>
-                <select>
-                    <option v-for="t in file.supportedTemplates" :value="t.code">{{ t.name }}</option>
-                </select> -->
-            </div>
-
-            <div id="printer">
-                <button @click="print">
-                    <span class="icon">
-                        <IconPrinter/>
-                    </span>
-                    Print
-                </button>
-            </div>
-
-            <div id="students">
-                <button @click="toStudents">Students</button>
+                <div class="cong-form">
+                    <lord-icon src="https://cdn.lordicon.com/lecprnjb.json" trigger="hover" colors="primary:#e6e6e6"
+                        style="width:25px;height:25px" @click.stop="showCongSettings">
+                    </lord-icon>
+                    <div class="cong-form-modal" v-if="congSettingsDisplay" ref="congformModal">
+                        <CongFormInputs />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -49,25 +43,44 @@
     import { useFileStore } from '@/stores/files';
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
-    import { ref, watch } from 'vue';
+    import { ref, watch, onMounted, onUnmounted } from 'vue';
     import IconPrinter from '../icons/IconPrinter.vue';
+    import CongFormInputs from '../forms/CongFormInputs.vue';
 
+    const congformModal = ref(null);
     const file = useFileStore();
     const cong = useCongregationStore();
     const view = useViewStore()
     const selectedMonth = ref(file.selectedMonth?.content?.period);
     const selectedLanguage = ref(cong.getStoredLanguage?.code);
+    const congSettingsDisplay = ref(false)
+
+    const handleOutsideCongform = (event) => {
+        if (congformModal.value && !congformModal.value.contains(event.target)) {
+            hideCongSettings();
+        }
+    };
+
+    onMounted(() => {
+        document.addEventListener('click', handleOutsideCongform);
+    });
+
+    onUnmounted(() => {
+        document.removeEventListener('click', handleOutsideCongform);
+    });
+
+    function showCongSettings() {
+        congSettingsDisplay.value = true
+    }
+
+    function hideCongSettings() {
+        congSettingsDisplay.value = false
+    }
 
     function loadMonth() {
         file.setMWBMonth(selectedMonth.value);
     }
 
-    // function loadLangauge() {
-    //     cong.setLanguage(selectedLanguage.value)
-    //     console.log(selectedLanguage.value.code);
-    // }
-
-    // Watch for changes in the file's selected month and update the local selectedMonth
     watch(() => file.selectedMonth?.content?.period, (newValue) => {
         selectedMonth.value = newValue;
     });
@@ -95,18 +108,22 @@
 
     .set-wrappers
     {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr .5fr .5fr;
+        display: flex;
         margin: auto;
         height: 100%;
-        max-width: 1080px;
-        justify-content: center;
+        max-width: 1070px;
+        justify-content: space-between;
         align-items: center;
         color: white;
         font-weight: 300;
         font-size: 14px;
-        /* gap: 60px */
+    }
 
+    .actions
+    {
+        display: flex;
+        gap: 20px;
+        align-items: center
     }
 
     .setters
@@ -120,14 +137,14 @@
     .setters span
     {
         color: rgb(192, 192, 192);
-        width: 50px;
+        width: 60px;
     }
 
     select
     {
         padding: 6px 15px;
         font-size: small;
-        background: rgb(230, 230, 230);
+        background: #e6e6e6;
         border-radius: 4px;
         border: none;
         appearance: none;
@@ -148,8 +165,6 @@
         justify-content: flex-end;
     }
 
-
-
     #printer button
     {
         border: 1px solid #3DA8EA;
@@ -162,18 +177,17 @@
         transition: ease-in-out .2s;
         display: flex;
         gap: 10px
-
     }
 
-    #printer button svg {
+    #printer button svg
+    {
         height: auto;
-        /* border: 1px solid red */
     }
 
     #students button
     {
         border: 1px solid #3DA8EA;
-        padding: 6px 25px;
+        padding: 7px 25px;
         font-size: small;
         border-radius: 4px;
         background: transparent;
@@ -191,5 +205,39 @@
     {
         color: white;
         background: #3DA8EA;
+    }
+
+    lord-icon
+    {
+        cursor: pointer;
+        opacity: .4;
+    }
+
+    lord-icon:hover
+    {
+        opacity: .8;
+    }
+
+    .cong-form
+    {
+        position: relative;
+
+    }
+
+    .cong-form-modal
+    {
+
+        position: absolute;
+        width: 450px;
+        top: calc(100% + 20px);
+        right: calc(100% - 30px);
+        height: 350px;
+        padding: 30px;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     }
 </style>

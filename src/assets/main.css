@@ -27,7 +27,8 @@ body
     overflow: hidden;
 }
 
-#app{
+#app
+{
     height: 100%;
     width: 100%;
     display: flex;
@@ -233,7 +234,8 @@ section
     grid-template-rows: var(--h-1) min-content;
 }
 
-.page-break {
+.page-break
+{
     page-break-after: always;
 }
 
@@ -443,15 +445,31 @@ section
     border-radius: 5px;
     font-size: 14px;
     padding: 6px 15px;
+    transition: ease-in-out .2s;
+
+}
+
+.btn-primary
+{
     border: 2px solid #3DA8EA;
     background: #3DA8EA;
-    transition: ease-in-out .2s;
     color: white;
 }
 
-.btn-md-inv:hover
+.btn-warning
+{
+    border: 2px solid #cc3300;
+    background: #cc3300;
+    color: white;
+}
+
+.btn-primary:hover
 {
     background: #54b4f0;
+}
+.btn-warning:hover
+{
+    background: #e63b03;
 }
 
 #cong-form .h2
@@ -518,7 +536,8 @@ section
 
 @media print
 {
-    @page {
+    @page
+    {
         size: A4;
     }
 
@@ -528,16 +547,19 @@ section
         height: 100%;
     }
 
-    #app {
+    #app
+    {
         width: 1080px;
         overflow: hidden;
     }
 
-    .headbar {
+    .headbar
+    {
         display: none;
-    } 
+    }
 
-    #fsl-mwb, #template-bg
+    #fsl-mwb,
+    #template-bg
     {
         padding: 0;
         height: 100%;
@@ -549,21 +571,25 @@ section
 }
 
 
-::-webkit-scrollbar {
+::-webkit-scrollbar
+{
     width: 8px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+}
+
+/* Track */
+::-webkit-scrollbar-track
+{
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb
+{
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+{
+    background: #555;
+}
