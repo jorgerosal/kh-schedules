@@ -12,9 +12,9 @@
         <span>
             <div v-show="p.title" :class="p.class">{{ p.title }}</div>
             <div class="generic-label">{{ p.reference }}</div>
-            <div class="assignee" @click="showSelector">
+            <div class="assignee" @click.stop="showSelector">
                 <div :class="assignClasses">{{ displayAssignee }}</div>
-                <PublisherSelector v-if="selector.show" :part="p" @mouseleave="hideSelector" :me="selector" :assignee="partAssignedTo" @hide-me="hideSelector"/>
+                <PublisherSelector v-if="selector.show" :part="p" :me="selector" :assignee="partAssignedTo"/>
 
             </div>
         </span>

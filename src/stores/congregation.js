@@ -26,7 +26,7 @@ export const useCongregationStore = defineStore('congregation', () => {
         { code: 'ceb', support: true, lang: 'Cebuano' },
         { code: 'psp', support: true, lang: 'Filipino Sign Language' },
         { code: 'war', support: true, lang: 'Waray-waray' },
-        { code: 'tl', support: false, lang: 'Tagalog' },
+        { code: 'tl', support: true, lang: 'Tagalog' },
     ]);
 
     const ministryClasses = ref([

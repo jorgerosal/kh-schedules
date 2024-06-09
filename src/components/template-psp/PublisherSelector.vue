@@ -1,9 +1,6 @@
 <template>
-    <div id="assignee-selector">
+    <div id="assignee-selector" ref="modalSelector">
         <div class="wrapper">
-            <div class="close" @click.stop="$emit('hideMe')">
-                <IconTimes/>
-            </div>
             <div class="head-title">
                 Select Students
             </div>
@@ -36,19 +33,37 @@
     import { useAssignmentsStore } from '@/stores/assignments';
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
-    import { computed, ref, onMounted } from 'vue';
+    import { computed, ref, onMounted, onUnmounted } from 'vue';
     import IconTimes from '../icons/IconTimes.vue';
-
-    const DEMO_ASSIGN_SEPARATOR = ' & '
-    const congStore = useCongregationStore()
-    const viewStore = useViewStore()
-    const assignmentStore = useAssignmentsStore()
 
     const props = defineProps({
         part: Object,
         me: Object,
         assignee: String,
     })
+
+    const DEMO_ASSIGN_SEPARATOR = ' & '
+    const congStore = useCongregationStore()
+    const viewStore = useViewStore()
+    const assignmentStore = useAssignmentsStore()
+
+    const modalSelector = ref(null)
+
+    const handleOutsideModalClick = (event) => {
+        if (modalSelector.value && !modalSelector.value.contains(event.target)) {
+            props.me.show = false
+        }
+    };
+
+    onMounted(() => {
+        document.addEventListener('click', handleOutsideModalClick);
+    });
+
+    onUnmounted(() => {
+        document.removeEventListener('click', handleOutsideModalClick);
+    });
+
+
 
     const student = ref(null);
     const assistant = ref(null);
@@ -103,7 +118,7 @@
         if (!isDemo.value && !isPrayer.value) {
             assignmentStore.setAssignment(props.part.id, pub.name)
             props.me.show = false
-        } else if(isDemo.value) {
+        } else if (isDemo.value) {
             handleDemoSelections(pub)
         } else if (isPrayer.value) {
             handlePrayerSelections(pub)
@@ -207,7 +222,8 @@
         position: relative;
     }
 
-    .head-title {
+    .head-title
+    {
         font-weight: 600;
         color: gray;
         width: 100%;
@@ -312,18 +328,5 @@
         color: #3DA8EA;
         padding: 0 4px;
         border-radius: 3px;
-    }
-
-    .close {
-        position: absolute;
-        top: 12px;
-        right: 10px;
-        height: 16px;
-        width: 16px;
-        opacity: .4;
-    }
-
-    .close:hover {
-        opacity: .7;
     }
 </style>
