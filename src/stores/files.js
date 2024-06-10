@@ -1,6 +1,9 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 import { useCongregationStore } from './congregation';
+import { useCoVisitStore } from './covisits';
+import { useAssembliesStore } from './assemblies';
+import { useAssignmentsStore } from './assignments';
 
 export const useFileStore = defineStore('files', () => {
     const month = ref();
@@ -57,11 +60,63 @@ export const useFileStore = defineStore('files', () => {
         } else {
             month.value = monthNum;
         }
+
+        await loadMonthsVisit();
+        await loadMonthEvents()
+    }
+
+    async function loadMonthsVisit() {
+        const visitStore = useCoVisitStore()
+        const currMonth = selectedMonth.value
+        visitStore.currentMonth = currMonth.content?.period
+        await visitStore.retrieveLocal();
+        const hasVisit = visitStore.hasMonthVisit === 'Y'
+
+        if (!hasVisit) return
+
+        const assignments = useAssignmentsStore()
+        const monthId = visitStore.currentMonth
+        const visitDetails = visitStore.visitDetails[monthId]
+        const weekId = visitDetails.weekId
+        if (!weekId) return
+
+        const visitWeek = selectedMonth.value.content.weeks.find(w => w.id == weekId)
+        const cbsPart = visitWeek.parts.living.find(p => p.roles.includes('cbs'))
+
+        cbsPart.thumbnail = "https://cms-imgp.jw-cdn.org/img/p/1011229/univ/art/1011229_univ_sqr_lg.jpg"
+        cbsPart.title = visitDetails.talk
+        cbsPart.reference = 'CO\'s 1st Service Talk'
+        assignments.setAssignment(cbsPart.id, visitDetails.co)
+
+        if (visitDetails.sjj) visitWeek.songs[2] = visitDetails.sjj
+    }
+
+    async function loadMonthEvents() {
+        const eventStore = useAssembliesStore()
+
+        const currMonth = selectedMonth.value
+        eventStore.currentMonth = currMonth.content?.period
+        await eventStore.retrieveLocal();
+        const hasEvent = eventStore.hasMonthAssembly === 'Y'
+        if (!hasEvent) return
+
+        const monthId = eventStore.currentMonth
+        const targetEvent = eventStore.details[monthId]
+        const weekId = targetEvent.weekId
+
+        if (!weekId) return
+
+        console.log(weekId);
+
+        const eventWeek = selectedMonth.value.content.weeks.find(w => w.id == weekId)
+        eventWeek.hasEvent = true
+
     }
 
     return {
         availableMonths, selectedMonth,
         setMWBMonth,
         loadFiles, supportedTemplates,
+        loadMonthsVisit,
     }
 })

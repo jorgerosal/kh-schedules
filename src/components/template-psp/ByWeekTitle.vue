@@ -29,7 +29,7 @@
                 <IconPraying />
             </span>
             <span>
-                <div class="assignee" @click="showSelector">
+                <div class="assignee" @click.stop="showSelector">
                     {{ assigneeDisplay }}
                 </div>
 

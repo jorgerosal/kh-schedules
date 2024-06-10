@@ -1,5 +1,5 @@
 <template>
-    <div class="headbar">
+    <div class="headbar no-print">
         <div class="set-wrappers">
             <div class="setters">
                 <span>Month</span>
@@ -25,12 +25,20 @@
                     <button @click="toStudents">Students</button>
                 </div>
 
-                <div class="cong-form">
+                <div class="cong-form no-print">
                     <lord-icon src="https://cdn.lordicon.com/lecprnjb.json" trigger="hover" colors="primary:#e6e6e6"
-                        style="width:25px;height:25px" @click.stop="showCongSettings">
+                        @click.stop="showCongSettings">
                     </lord-icon>
                     <div class="cong-form-modal" v-if="congSettingsDisplay" ref="congformModal">
-                        <CongFormInputs />
+                        <div>
+                            <CongFormInputs />
+                        </div>
+                        <div>
+                            <COVisitForm />
+                        </div>
+                        <div>
+                            <AssemblyForm />
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,23 +49,24 @@
 
 <script setup>
     import { useFileStore } from '@/stores/files';
-    import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
     import { ref, watch, onMounted, onUnmounted } from 'vue';
     import IconPrinter from '../icons/IconPrinter.vue';
     import CongFormInputs from '../forms/CongFormInputs.vue';
+    import COVisitForm from '../forms/COVisitForm.vue';
+    import AssemblyForm from '../forms/AssemblyForm.vue';
+
 
     const congformModal = ref(null);
     const file = useFileStore();
-    const cong = useCongregationStore();
     const view = useViewStore()
     const selectedMonth = ref(file.selectedMonth?.content?.period);
-    const selectedLanguage = ref(cong.getStoredLanguage?.code);
     const congSettingsDisplay = ref(false)
 
     const handleOutsideCongform = (event) => {
         if (congformModal.value && !congformModal.value.contains(event.target)) {
             hideCongSettings();
+            file.loadMonthsVisit();
         }
     };
 
@@ -211,6 +220,8 @@
     {
         cursor: pointer;
         opacity: .4;
+        width: 25px;
+        height: 25px
     }
 
     lord-icon:hover
@@ -221,23 +232,33 @@
     .cong-form
     {
         position: relative;
-
     }
 
     .cong-form-modal
     {
 
         position: absolute;
-        width: 450px;
+        width: 550px;
         top: calc(100% + 20px);
         right: calc(100% - 30px);
-        height: 350px;
-        padding: 30px;
+        min-height: 400px;
+        max-height: 600px;
+        overflow: auto;
+        height: auto;
+        padding: 40px;
         background: white;
+
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+    hr
+    {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
 </style>

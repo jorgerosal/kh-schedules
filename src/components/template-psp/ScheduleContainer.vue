@@ -1,7 +1,8 @@
 <template>
     <div class="contents">
         <template v-for="(w, i) in weeks" :key="w.order">
-            <ScheduleByWeek :w="w" :i="i" :weeks="weeksCount" />
+            <ScheduleByWeek :w="w" :i="i" :weeks="weeksCount" v-if="!w.hasEvent"/>
+            <ScheduleEvent v-else/>
         </template>
     </div>
 </template>
@@ -10,6 +11,7 @@
     import { useFileStore } from '@/stores/files';
     import { computed } from 'vue';
     import ScheduleByWeek from '@/components/template-psp/ScheduleByWeek.vue'
+    import ScheduleEvent from '@/components/template-psp/ScheduleEvent.vue'
 
     const fileStore = useFileStore()
 
@@ -17,7 +19,9 @@
         return fileStore.selectedMonth?.content?.weeks || [];
     });
 
-    const weeksCount = computed(()=> {
+    const weeksCount = computed(() => {
         return weeks.value.length
     })
 </script>
+
+
