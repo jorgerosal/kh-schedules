@@ -54,9 +54,7 @@ export const useCoVisitStore = defineStore('visits', () => {
     watch(
         () => visitDetails.value,
         async () => {
-
             storeToLocal();
-            // fileStore.loadMonthsVisit()
         },
         { deep: true }
     )

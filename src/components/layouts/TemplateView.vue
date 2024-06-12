@@ -29,17 +29,9 @@
                     <lord-icon src="https://cdn.lordicon.com/lecprnjb.json" trigger="hover" colors="primary:#e6e6e6"
                         @click.stop="showCongSettings">
                     </lord-icon>
-                    <div class="cong-form-modal" v-if="congSettingsDisplay" ref="congformModal">
-                        <div>
-                            <CongFormInputs />
-                        </div>
-                        <div>
-                            <COVisitForm />
-                        </div>
-                        <div>
-                            <AssemblyForm />
-                        </div>
-                    </div>
+                    <template v-if="congSettingsDisplay">
+                        <CongSettingForm @hide-me="hideCongSettings"/>
+                    </template>
                 </div>
             </div>
         </div>
@@ -50,33 +42,14 @@
 <script setup>
     import { useFileStore } from '@/stores/files';
     import { useViewStore } from '@/stores/views';
-    import { ref, watch, onMounted, onUnmounted } from 'vue';
+    import { ref, watch } from 'vue';
     import IconPrinter from '../icons/IconPrinter.vue';
-    import CongFormInputs from '../forms/CongFormInputs.vue';
-    import COVisitForm from '../forms/COVisitForm.vue';
-    import AssemblyForm from '../forms/AssemblyForm.vue';
+    import CongSettingForm from '../forms/CongSettingForm.vue';
 
-
-    const congformModal = ref(null);
     const file = useFileStore();
     const view = useViewStore()
     const selectedMonth = ref(file.selectedMonth?.content?.period);
     const congSettingsDisplay = ref(false)
-
-    const handleOutsideCongform = (event) => {
-        if (congformModal.value && !congformModal.value.contains(event.target)) {
-            hideCongSettings();
-            file.loadMonthsVisit();
-        }
-    };
-
-    onMounted(() => {
-        document.addEventListener('click', handleOutsideCongform);
-    });
-
-    onUnmounted(() => {
-        document.removeEventListener('click', handleOutsideCongform);
-    });
 
     function showCongSettings() {
         congSettingsDisplay.value = true
@@ -232,26 +205,6 @@
     .cong-form
     {
         position: relative;
-    }
-
-    .cong-form-modal
-    {
-
-        position: absolute;
-        width: 550px;
-        top: calc(100% + 20px);
-        right: calc(100% - 30px);
-        min-height: 400px;
-        max-height: 600px;
-        overflow: auto;
-        height: auto;
-        padding: 40px;
-        background: white;
-
-        display: flex;
-        flex-direction: column;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     }
 
     hr

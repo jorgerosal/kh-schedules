@@ -58,7 +58,7 @@
         display: grid;
         grid-template-columns: 200px 1fr;
         align-items: center;
-        padding: 75px 25px;
+        padding: 35px 25px;
         gap: 20px;
     }
 

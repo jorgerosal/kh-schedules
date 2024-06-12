@@ -3,10 +3,10 @@ import { defineStore } from 'pinia'
 import { useCongregationStore } from './congregation';
 import { useCoVisitStore } from './covisits';
 import { useAssembliesStore } from './assemblies';
-import { useAssignmentsStore } from './assignments';
+import { cloneDeep } from 'lodash';
 
 export const useFileStore = defineStore('files', () => {
-    const month = ref();
+    const loadedMonth = ref({});
     const availableMonths = ref([]);
     const templates = ref([
         { code: 's-140', supported: false, name: "S-140" },
@@ -47,18 +47,16 @@ export const useFileStore = defineStore('files', () => {
     }
 
     const selectedMonth = computed(() => {
-        const moNum = `${month.value}.json`
-        const mo = availableMonths.value.find(f => f.name == moNum)
-        return mo ?? {};
+        return loadedMonth.value;
     })
 
     async function setMWBMonth(monthNum) {
         if (!monthNum) {
             if (availableMonths.value[0]) {
-                month.value = availableMonths.value[0].content.period
+                loadedMonth.value = cloneDeep(availableMonths.value[0])
             }
         } else {
-            month.value = monthNum;
+            loadedMonth.value = cloneDeep(availableMonths.value.find(f => f.name == `${monthNum}.json`))
         }
 
         await loadMonthsVisit();
@@ -74,19 +72,23 @@ export const useFileStore = defineStore('files', () => {
 
         if (!hasVisit) return
 
-        const assignments = useAssignmentsStore()
         const monthId = visitStore.currentMonth
         const visitDetails = visitStore.visitDetails[monthId]
         const weekId = visitDetails.weekId
-        if (!weekId) return
 
-        const visitWeek = selectedMonth.value.content.weeks.find(w => w.id == weekId)
+        if (!weekId) return
+        loadVisitToTargetWeek(visitDetails);
+    }
+
+    async function loadVisitToTargetWeek(visitDetails) {
+        const visitWeek = selectedMonth.value.content.weeks.find(w => w.id == visitDetails.weekId)
         const cbsPart = visitWeek.parts.living.find(p => p.roles.includes('cbs'))
 
-        cbsPart.thumbnail = "https://cms-imgp.jw-cdn.org/img/p/1011229/univ/art/1011229_univ_sqr_lg.jpg"
-        cbsPart.title = visitDetails.talk
-        cbsPart.reference = 'CO\'s 1st Service Talk'
-        assignments.setAssignment(cbsPart.id, visitDetails.co)
+        cbsPart.thumbnail = "https://cms-imgp.jw-cdn.org/img/p/1011229/univ/art/1011229_univ_sqr_lg.jpg";
+        cbsPart.title = visitDetails.talk;
+        cbsPart.reference = 'CO\'s 1st Service Talk';
+        cbsPart.isVisit = true;
+        cbsPart.co = visitDetails.co
 
         if (visitDetails.sjj) visitWeek.songs[2] = visitDetails.sjj
     }
@@ -105,8 +107,6 @@ export const useFileStore = defineStore('files', () => {
         const weekId = targetEvent.weekId
 
         if (!weekId) return
-
-        console.log(weekId);
 
         const eventWeek = selectedMonth.value.content.weeks.find(w => w.id == weekId)
         eventWeek.hasEvent = true

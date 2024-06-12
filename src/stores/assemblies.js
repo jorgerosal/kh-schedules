@@ -31,7 +31,6 @@ export const useAssembliesStore = defineStore('assemblies', () => {
     }
 
     const currentDetail = computed(() => {
-        console.log(currentMonth.value);
         const basic = details.value[currentMonth.value]
         const event = options.value.find(o => o.code == basic.code)
         const week = fileStore.selectedMonth.content.weeks.find(w => w.id == basic.weekId)
