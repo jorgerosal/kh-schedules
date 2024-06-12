@@ -14,8 +14,7 @@
             <div class="generic-label">{{ p.reference }}</div>
             <div class="assignee" @click.stop="showSelector">
                 <div :class="assignClasses">{{ displayAssignee }}</div>
-                <PublisherSelector v-if="selector.show" :part="p" :me="selector" :assignee="partAssignedTo"/>
-
+                <PublisherSelector v-if="selector.show" :part="p" :me="selector" :assignee="partAssignedTo" />
             </div>
         </span>
     </div>
@@ -33,12 +32,16 @@
     const assignmentStore = useAssignmentsStore();
 
     const displayAssignee = computed(() => {
-        const partid = props.p.id
-        const assigned = assignmentStore.getAssignments[partid];
-        return assigned ?? 'Not Assigned!';
+        if (!props.p.isVisit) {
+            const partid = props.p.id
+            const assigned = assignmentStore.getAssignments[partid];
+            return assigned ?? 'Not Assigned!';
+        } else {
+            return props.p.co
+        }
     })
 
-    const partAssignedTo = computed(()=> {
+    const partAssignedTo = computed(() => {
         const partid = props.p.id
         const assigned = assignmentStore.getAssignments[partid];
         return assigned
@@ -47,9 +50,7 @@
     const assignClasses = computed(() => {
         return [
             'assign-to',
-            {
-                'faded': displayAssignee.value == 'Not Assigned!'
-            }
+            { 'faded': displayAssignee.value == 'Not Assigned!' }
         ]
     })
 
@@ -59,9 +60,5 @@
 
     function showSelector() {
         selector.value.show = true
-    }
-
-    function hideSelector() {
-        selector.value.show = false
     }
 </script>

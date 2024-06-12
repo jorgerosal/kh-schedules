@@ -48,7 +48,7 @@
         height: 460px;
         width: 450px;
         position: relative;
-        margin-top: -100px;
+        margin-top: -60px;
     }
 
     #form

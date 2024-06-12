@@ -44,7 +44,6 @@
     const congStore = useCongregationStore()
     const fileStore = useFileStore()
     const assignments = useAssignmentsStore()
-    const cong = ref(null)
     const ddLangs = ref(false)
     const ddClasses = ref(false)
 
