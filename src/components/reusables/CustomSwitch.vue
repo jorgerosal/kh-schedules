@@ -52,7 +52,7 @@
     {
         display: flex;
         align-items: center;
-        padding: 10px;
+        padding: 30px 0 10px;
     }
 
     .custom-switch input[type="checkbox"]
@@ -102,11 +102,6 @@
         background-color: #3DA8EA;
         transform: translateX(18.5px);
     }
-
-    /* .switch-primary
-    {
-        background-color: #3DA8EA;
-    } */
 
     .label-text
     {

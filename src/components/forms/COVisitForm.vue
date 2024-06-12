@@ -80,6 +80,9 @@
         flex-direction: column;
         justify-content: flex-start;
         gap: 10px;
+        padding: 0 0 0 20px;
+        margin-left: -20px;
+        border-left: 3px solid #3da8ea34;
     }
 
     #co-visit
