@@ -8,9 +8,9 @@
                 <input type="text" placeholder="Provide your congregation here! " :value="congregation.congName"
                     @input="updateCongName">
             </div>
-            <div class="details-title" :style="bg">{{ file.selectedMonth.content?.title }}</div>
+            <div class="details-title" :style="bg">{{ file.selectedMonth?.content?.title }}</div>
             <div class="details-month" v-if="true">
-                <div id="active-month">{{ file.selectedMonth.content?.display }}</div>
+                <div id="active-month">{{ file.selectedMonth?.content?.display }}</div>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
     const file = useFileStore()
 
     const bg = computed(() => {
-        if (!file.selectedMonth.content) return null
+        if (!file.selectedMonth?.content) return null
 
         return {
             color: file.selectedMonth.content.theme

@@ -52,7 +52,7 @@ export const useFileStore = defineStore('files', () => {
 
     async function setMWBMonth(monthNum) {
         if (!monthNum) {
-            const period = loadedMonth.value.content?.period;
+            const period = loadedMonth.value?.content?.period;
             const targetMonth = period
                 ? availableMonths.value.find(f => f.name === `${period}.json`)
                 : null;
@@ -68,7 +68,7 @@ export const useFileStore = defineStore('files', () => {
     async function loadMonthsVisit() {
         const visitStore = useCoVisitStore()
         const currMonth = selectedMonth.value
-        visitStore.currentMonth = currMonth.content?.period
+        visitStore.currentMonth = currMonth?.content?.period
         await visitStore.retrieveLocal();
         const hasVisit = visitStore.hasMonthVisit === 'Y'
 
@@ -99,7 +99,7 @@ export const useFileStore = defineStore('files', () => {
         const eventStore = useAssembliesStore()
 
         const currMonth = selectedMonth.value
-        eventStore.currentMonth = currMonth.content?.period
+        eventStore.currentMonth = currMonth?.content?.period
         await eventStore.retrieveLocal();
         const hasEvent = eventStore.hasMonthAssembly === 'Y'
         if (!hasEvent) return
