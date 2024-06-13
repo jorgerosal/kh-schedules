@@ -1,38 +1,11 @@
-# mwb-scheduler
+## KH Meetings Schedules Assistant
+
+## How Can This Application Help You
+This project aims to shorten the time OCLM Overseers spend preparing OCLM Schedules and managing assignments. It also offers flexibility during weeks of circuit overseers' visits, which affect some parts of the meetings, and during assembly weeks when there are no midweek meetings.
 
 
+## Support and Contribution 
+This project aims to support new, essential features and a wide range of meeting languages. We warmly welcome contributions from other JW developers! To get involved, please contact the developer at *jeztan12@gmail.com*.
 
-## Pushing to Github Pages
-```
-npm run build
-
-git add .
-
-git commit -m "Deploy to GitHub Pages"
-
-git push origin main
-
-```
-
-## Deployment
-
-Deployed with https://jezzar042015.github.io/kh-schedules/
-
-
-## Ensuring Permissions
-You can create a new Personal Access Token (PAT) with repo permissions and add it as a secret in your GitHub repository settings:
-
-Go to GitHub Personal Access Tokens.
-Generate a new token with repo permissions.
-In your repository, go to Settings > Secrets > Actions.
-Add a new secret with the name GH_TOKEN and the value as your newly created PAT.
-Update your workflow file to use this token:
-
-```yaml
-- name: Deploy to GitHub Pages
-  uses: peaceiris/actions-gh-pages@v3
-  with:
-    personal_token: ${{ secrets.GH_TOKEN }}
-    publish_dir: ./dist
-
-```
+## Privacy and Security
+Publisher names and other information entered by users are not sent to cloud storage. This data is stored on their local devices.  Using the same congregation on different devices will not display the same content, just like how the JW Library app keeps the data.
