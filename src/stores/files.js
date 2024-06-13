@@ -52,11 +52,13 @@ export const useFileStore = defineStore('files', () => {
 
     async function setMWBMonth(monthNum) {
         if (!monthNum) {
-            if (availableMonths.value[0]) {
-                loadedMonth.value = cloneDeep(availableMonths.value[0])
-            }
+            const period = loadedMonth.value.content?.period;
+            const targetMonth = period
+                ? availableMonths.value.find(f => f.name === `${period}.json`)
+                : null;
+            loadedMonth.value = cloneDeep(targetMonth || availableMonths.value[0]);
         } else {
-            loadedMonth.value = cloneDeep(availableMonths.value.find(f => f.name == `${monthNum}.json`))
+            loadedMonth.value = cloneDeep(availableMonths.value.find(f => f.name === `${monthNum}.json`));
         }
 
         await loadMonthsVisit();
