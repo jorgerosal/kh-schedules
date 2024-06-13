@@ -470,7 +470,7 @@
                         "title": "Pagpatin-aw sa Imong Tinuohan",
                         "class": "part-title-ministry",
                         "reference": "ijwbq 181—Tema: Bahin sa Unsa ang Bibliya? (th tun-anan 2)",
-                        "thumbnail": "lff",
+                        "thumbnail": "th",
                         "roles": [
                             "talk"
                         ]
@@ -626,6 +626,7 @@
                         "time": 10,
                         "title": "Mga Nalampos sa Organisasyon para sa Septiyembre",
                         "class": "part-title-living",
+                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/com-rep22/univ/art/com-rep22_univ_wss_03_lg.jpg",
                         "roles": [
                             "elder"
                         ]
