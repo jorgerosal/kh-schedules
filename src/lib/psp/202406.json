@@ -67,7 +67,7 @@
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
                         "reference": "lmd 1:3",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -78,7 +78,7 @@
                         "title": "Talk",
                         "class": "part-title-ministry",
                         "reference": "th 18",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
+                        "thumbnail": "th",
                         "roles": [
                             "talk"
                         ]
@@ -89,7 +89,7 @@
                         "title": "Explaining Your Beliefs",
                         "class": "part-title-ministry",
                         "reference": "lmd 6:5",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -121,7 +121,7 @@
                         "time": 30,
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
+                        "thumbnail": "lfb",
                         "reference": "lfb 25 & 26",
                         "roles": [
                             "cbs"
@@ -200,7 +200,7 @@
                         "title": "Boldness​—What Jesus Did",
                         "class": "part-title-ministry",
                         "reference": "lmd 6:1-2",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "elder",
                             "ms"
@@ -212,7 +212,7 @@
                         "title": "Boldness​—Imitate Jesus",
                         "class": "part-title-ministry",
                         "reference": "lmd 6:3-5, See Also",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "elder",
                             "ms"
@@ -234,7 +234,7 @@
                         "time": 30,
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
+                        "thumbnail": "lfb",
                         "reference": "lfb 27 & 28",
                         "roles": [
                             "cbs"
@@ -313,7 +313,7 @@
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
                         "reference": "lmd 7:3",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -324,7 +324,7 @@
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
                         "reference": "lmd 4:4",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -335,7 +335,7 @@
                         "title": "Following Up",
                         "class": "part-title-ministry",
                         "reference": "lmd 9:5",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -346,7 +346,7 @@
                         "title": "Making Disciples",
                         "class": "part-title-ministry",
                         "reference": "lmd 11:5",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -369,7 +369,7 @@
                         "time": 30,
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
+                        "thumbnail": "lfb",
                         "reference": "lfb Sec 6, 29 & 30",
                         "roles": [
                             "cbs"
@@ -448,7 +448,7 @@
                         "title": "Starting a Conversation",
                         "class": "part-title-ministry",
                         "reference": "th 11",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
+                        "thumbnail": "th",
                         "roles": [
                             "demo"
                         ]
@@ -459,7 +459,7 @@
                         "title": "Following Up",
                         "class": "part-title-ministry",
                         "reference": "lmd 7:4",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -470,7 +470,7 @@
                         "title": "Talk",
                         "class": "part-title-ministry",
                         "reference": "th 9",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
+                        "thumbnail": "th",
                         "roles": [
                             "talk"
                         ]
@@ -503,7 +503,7 @@
                         "time": 30,
                         "title": "Congregation Bible Study",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/1102016120/FSL/wpub/1102016120_FSL_cvr_lg.jpg",
+                        "thumbnail": "lfb",
                         "reference": "lfb Sec 6, 29 & 30",
                         "roles": [
                             "cbs"

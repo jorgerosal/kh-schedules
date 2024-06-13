@@ -4,7 +4,7 @@
 
         <span v-if="p.thumbnail">
             <div class="part-thumbnail">
-                <img :src="p.thumbnail" alt="">
+                <img :src="thumbnail" alt="">
             </div>
         </span>
         <span v-else></span>
@@ -24,6 +24,7 @@
     import { computed, ref } from 'vue';
     import { useAssignmentsStore } from '@/stores/assignments';
     import PublisherSelector from '@/components/template-psp/PublisherSelector.vue'
+    import thumbnails from '@/assets/utils/thumbnails';
 
     const props = defineProps({
         p: { type: Object }
@@ -53,6 +54,12 @@
             { 'faded': displayAssignee.value == 'Not Assigned!' }
         ]
     })
+
+    const thumbnail = computed(() => {
+        if (!props.p.thumbnail) return null
+        const tn = thumbnails[props.p.thumbnail]
+        return (tn) ? tn.thumbnail : props.p.thumbnail
+    });
 
     const selector = ref({
         show: false

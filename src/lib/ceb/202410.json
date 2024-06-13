@@ -67,7 +67,7 @@
                         "title": "Dihang Magsugod ug Panag-estorya",
                         "class": "part-title-ministry",
                         "reference": "lmd leksiyon 5 punto 3",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -78,7 +78,7 @@
                         "title": "Dihang Magbalikduaw",
                         "class": "part-title-ministry",
                         "reference": "lmd leksiyon 8 punto 4",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -89,7 +89,7 @@
                         "title": "Dihang Maghimog Tinun-an",
                         "class": "part-title-ministry",
                         "reference": "lmd leksiyon 12 punto 5",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -112,7 +112,7 @@
                         "time": 30,
                         "title": "Pagtuon sa Kongregasyon sa Bibliya",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/bt/ASL/pt/bt_ASL_lg.jpg",
+                        "thumbnail": "bt",
                         "reference": "bt kap. 16 ¶6-9, kahon sa p. 132",
                         "roles": [
                             "cbs"
@@ -191,7 +191,7 @@
                         "title": "Determinado—Ang Gihimo ni Jesus",
                         "class": "part-title-ministry",
                         "reference": "lmd leksiyon 10 punto 1-2",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "elder",
                             "ms"
@@ -203,7 +203,7 @@
                         "title": "Determinado—Sundoga si Jesus",
                         "class": "part-title-ministry",
                         "reference": "lmd leksiyon 10 punto 3-5 ug “Tan-awa Sab.”",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "elder",
                             "ms"
@@ -225,7 +225,7 @@
                         "time": 30,
                         "title": "Pagtuon sa Kongregasyon sa Bibliya",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/bt/ASL/pt/bt_ASL_lg.jpg",
+                        "thumbnail": "bt",
                         "reference": "bt kap. 16 ¶10-18",
                         "roles": [
                             "cbs"
@@ -304,7 +304,7 @@
                         "title": "Dihang Magsugod ug Panag-estorya",
                         "class": "part-title-ministry",
                         "reference": "lmd leksiyon 2 punto 3",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -315,7 +315,7 @@
                         "title": "Dihang Magbalikduaw",
                         "class": "part-title-ministry",
                         "reference": "lmd leksiyon 9 punto 4",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -326,7 +326,7 @@
                         "title": "Pagpatin-aw sa Imong Tinuohan",
                         "class": "part-title-ministry",
                         "reference": "ijwbq 129 (th tun-anan 8)",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
+                        "thumbnail": "th",
                         "roles": [
                             "demo"
                         ]
@@ -349,7 +349,7 @@
                         "time": 30,
                         "title": "Pagtuon sa Kongregasyon sa Bibliya",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/bt/ASL/pt/bt_ASL_lg.jpg",
+                        "thumbnail": "bt",
                         "reference": "bt kap. 17 ¶1-7",
                         "roles": [
                             "cbs"
@@ -428,7 +428,7 @@
                         "title": "Dihang Magsugod ug Panag-estorya",
                         "class": "part-title-ministry",
                         "reference": "lmd leksiyon 3 punto 4",
-                        "thumbnail": "https://assetsnffrgf-a.akamaihd.net/assets/a/lmd/univ/wpub/lmd_univ_lg.jpg",
+                        "thumbnail": "lmd",
                         "roles": [
                             "demo"
                         ]
@@ -439,7 +439,7 @@
                         "title": "Dihang Magbalikduaw",
                         "class": "part-title-ministry",
                         "reference": "th tun-anan 9",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
+                        "thumbnail": "th",
                         "roles": [
                             "demo"
                         ]
@@ -450,7 +450,7 @@
                         "title": "Pakigpulong",
                         "class": "part-title-ministry",
                         "reference": "lmd apendise A punto 6 (th tun-anan 1)",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/th/FSL/pt/th_FSL_lg.jpg",
+                        "thumbnail": "th",
                         "roles": [
                             "talk"
                         ]
@@ -473,7 +473,7 @@
                         "time": 30,
                         "title": "Pagtuon sa Kongregasyon sa Bibliya",
                         "class": "part-title-living",
-                        "thumbnail": "https://cms-imgp.jw-cdn.org/img/p/bt/ASL/pt/bt_ASL_lg.jpg",
+                        "thumbnail": "bt",
                         "reference": "bt kap. 17 ¶8-12, kahon sa p. 137",
                         "roles": [
                             "cbs"
