@@ -1,7 +1,7 @@
 <template>
     <div class="cong-form-modal" ref="congformModal">
         <div>
-            <CongFormInputs />
+            <CongFormInputs :settings="settings" />
         </div>
         <div>
             <COVisitForm />
@@ -22,6 +22,15 @@
     const emits = defineEmits(['hideMe']);
     const file = useFileStore();
     const congformModal = ref(null);
+
+    const settings = ref({
+        showLabels: true,
+        PhCong: "",
+        PhLanguage: "",
+        PhClasses: "",
+        showConfirm: false,
+        showSubtitle: true
+    })
 
     function hideCongSettings() {
         emits('hideMe')
@@ -63,5 +72,18 @@
         flex-direction: column;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+
+</style>
+
+<style>
+    .form-subtitle
+    {
+        font-size: small;
+        text-transform: uppercase;
+        color: #3DA8EA;
+        font-weight: 500;
+
     }
 </style>

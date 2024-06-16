@@ -1,7 +1,8 @@
 <template>
     <div class="inputs">
+        <div class="form-subtitle" v-show="settings.showSubtitle">Congregation Details</div>
         <div class="field">
-            <label for="" v-show="props.settings.showLabels">Congregation or Language Group</label>
+            <label for="" v-show="props.settings.showLabels">Congregation or Language Group Name</label>
             <input class="input" type="text" :placeholder="props.settings.PhCong" v-model="congStore.congregation.name">
         </div>
         <div class="select field" @mouseleave="hideLangOptions">
@@ -56,6 +57,7 @@
                 PhLanguage: "",
                 PhClasses: "",
                 showConfirm: false,
+                showSubtitle: false,
             }
         },
 

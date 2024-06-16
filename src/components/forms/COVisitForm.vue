@@ -1,10 +1,10 @@
 <template>
     <div id="co-visit">
-        
-        <CustomSwitch v-model="hasVisitWeek" :label="'Has circuit overseer\'s visit this month'"
-            false-value="N" true-value="Y" hide-details />
+        <CustomSwitch v-model="hasVisitWeek" :label="'Has circuit overseer\'s visit this month'" false-value="N"
+            true-value="Y" hide-details />
 
         <div class="inputs" v-if="hasVisitWeek === 'Y'">
+            <div class="form-subtitle">Circuit Overseer's Visit</div>
             <CustomSelect :items="weekOptions" label="Visit Week" placeholder="Select Visit Week" display="name"
                 v-model="visitDetails.weekId" />
             <CustomInput label="CO Name" placeholder="Enter Circuit Overseer's Name" v-model="visitDetails.co" />
@@ -80,9 +80,7 @@
         flex-direction: column;
         justify-content: flex-start;
         gap: 10px;
-        padding: 0 0 0 20px;
-        margin-left: -20px;
-        border-left: 3px solid #3da8ea34;
+        padding: 0;
     }
 
     #co-visit

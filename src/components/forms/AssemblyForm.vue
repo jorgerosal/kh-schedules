@@ -5,6 +5,7 @@
             false-value="N" true-value="Y" hide-details />
 
         <div class="inputs" v-if="hasAssemblyWeek === 'Y'">
+            <div class="form-subtitle">Circuit Assembly or Convention</div>
             <CustomSelect :items="weekOptions" label="Assembly Week" placeholder="Select Assembly Week" display="name"
                 v-model="assemblyDetails.weekId" />
             <CustomSelect :items="eventStore.options" placeholder="Select Event" label="Event" id="code" display="name"
@@ -77,9 +78,7 @@
         flex-direction: column;
         justify-content: flex-start;
         gap: 10px;
-        padding: 0 0 0 20px;
-        margin-left: -20px;
-        border-left: 3px solid #3da8ea34;
+        padding: 0;
     }
 
     .form-settings
