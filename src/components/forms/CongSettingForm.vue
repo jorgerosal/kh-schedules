@@ -70,20 +70,17 @@
         top: calc(100% + 20px);
         right: calc(100% - 30px);
         min-height: 400px;
-        max-height: 600px;
+        max-height: 90vh;
+        height: max-content;
         overflow: auto;
-        height: auto;
         padding: 40px;
         background: white;
-
         display: flex;
         flex-direction: column;
         border-radius: 5px;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
         color: grey;
     }
-
-
 </style>
 
 <style>
