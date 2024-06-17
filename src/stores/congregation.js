@@ -20,6 +20,7 @@ export const useCongregationStore = defineStore('congregation', () => {
         { code: "talk", display: "Talks" },
         { code: "demo", display: "Demos" },
         { code: "cbs", display: "CBS Conductor" },
+        { code: "rdr", display: "CBS Reader" },
     ])
 
     const languages = ref([
