@@ -4,9 +4,6 @@
             <div class="head-title">
                 Select Students
             </div>
-            <!-- <div v-show="!noPublishers" class="controls">
-                <input type="search" name="" id="" placeholder="Find participant">
-            </div> -->
             <div class="list">
                 <div class="publisher-option" @click.stop="assignPart(p)" v-for="p in feedOptions" :key="p.name">
                     <span class="pubname">{{ p.name }}</span>
@@ -34,7 +31,6 @@
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
     import { computed, ref, onMounted, onUnmounted } from 'vue';
-    import IconTimes from '../icons/IconTimes.vue';
 
     const props = defineProps({
         part: Object,
@@ -62,8 +58,6 @@
     onUnmounted(() => {
         document.removeEventListener('click', handleOutsideModalClick);
     });
-
-
 
     const student = ref(null);
     const assistant = ref(null);
@@ -117,6 +111,15 @@
     function assignPart(pub) {
         if (!isDemo.value && !isPrayer.value) {
             assignmentStore.setAssignment(props.part.id, pub.name)
+            
+            // check if there are autofills
+            if (props.part.autofills) {
+                const autofills = props.part.autofills
+                autofills.forEach(fill => {
+                    assignmentStore.setAssignment(fill, pub.name);
+                });
+            }
+
             props.me.show = false
         } else if (isDemo.value) {
             handleDemoSelections(pub)

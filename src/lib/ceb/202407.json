@@ -25,6 +25,9 @@
                         "roles": [
                             "elder",
                             "ms"
+                        ],
+                        "autofills": [
+                            "202407.1.8"
                         ]
                     },
                     {
@@ -146,6 +149,9 @@
                         "roles": [
                             "elder",
                             "ms"
+                        ],
+                        "autofills": [
+                            "202407.2.10"
                         ]
                     },
                     {
@@ -173,7 +179,7 @@
                     {
                         "id": "202407.2.3",
                         "time": 4,
-                        "reference": "Sal 60:1–61:8 (th 10)",
+                        "reference": "Sal 60:1-61:8 (th 10)",
                         "title": "Pagbasa sa Bibliya",
                         "class": "part-title-gems",
                         "roles": [
@@ -289,6 +295,9 @@
                         "roles": [
                             "elder",
                             "ms"
+                        ],
+                        "autofills": [
+                            "202407.3.10"
                         ]
                     },
                     {
@@ -432,6 +441,9 @@
                         "roles": [
                             "elder",
                             "ms"
+                        ],
+                        "autofills": [
+                            "202407.4.9"
                         ]
                     },
                     {
@@ -564,6 +576,9 @@
                         "roles": [
                             "elder",
                             "ms"
+                        ],
+                        "autofills": [
+                            "202407.5.9"
                         ]
                     },
                     {
