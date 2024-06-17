@@ -362,6 +362,13 @@ section
     font-style: italic;
 }
 
+.thumbnail-alt {
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+    padding-right: 10px;
+}
+
 #cong-form
 {
     display: flex;

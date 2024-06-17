@@ -1,13 +1,12 @@
 <template>
-    <div class="part-item">
-        <span>{{ p.time }}m</span>
-
+    <div :class="itemClasses">
+        <span>{{ time }}</span>
         <span v-if="p.thumbnail">
             <div class="part-thumbnail">
                 <img :src="thumbnail" alt="">
             </div>
         </span>
-        <span v-else></span>
+        <span v-else class="thumbnail-alt">{{ p.alt }}</span>
 
         <span>
             <div v-show="p.title" :class="p.class">{{ p.title }}</div>
@@ -61,11 +60,32 @@
         return (tn) ? tn.thumbnail : props.p.thumbnail
     });
 
+    const time = computed(() => {
+        if (!props.p.time) return null
+        return `${props.p.time}m`
+    })
+
     const selector = ref({
         show: false
+    })
+
+    const itemClasses = computed(() => {
+        if (props.p.class == 'accessory')
+            return 'accessory'
+        return 'part-item'
     })
 
     function showSelector() {
         selector.value.show = true
     }
+
 </script>
+
+<style scoped>
+    .accessory
+    {
+        display: grid;
+        grid-template-columns: 2fr 4fr 10fr;
+        padding-bottom: 3px;
+    }
+</style>

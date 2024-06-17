@@ -130,6 +130,14 @@
                         ]
                     },
                     {
+                        "id": "202409.1.9.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202409.1.10",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -240,6 +248,14 @@
                         "reference": "bt kap. 15 ¶8-12, kahon sa p. 118",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202409.2.7.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {
@@ -378,6 +394,14 @@
                         ]
                     },
                     {
+                        "id": "202409.3.9.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202409.3.10",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -506,6 +530,14 @@
                         "reference": "bt kap. 15 ¶15-20",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202409.4.9.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {
@@ -640,6 +672,14 @@
                         "reference": "bt kap. 16 ¶1-5, kahon sa p. 128",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202409.5.9.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {

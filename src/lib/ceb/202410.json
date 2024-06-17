@@ -119,6 +119,14 @@
                         ]
                     },
                     {
+                        "id": "202410.1.8.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202410.1.9",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -229,6 +237,14 @@
                         "reference": "bt kap. 16 ¶10-18",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202410.2.7.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {
@@ -356,6 +372,14 @@
                         ]
                     },
                     {
+                        "id": "202410.3.8.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202410.3.9",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -477,6 +501,14 @@
                         "reference": "bt kap. 17 ¶8-12, kahon sa p. 137",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202410.4.8.r",
+                        "class": "accessory",
+                        "alt": "Tigbasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {

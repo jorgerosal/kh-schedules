@@ -86,13 +86,21 @@ export const useFileStore = defineStore('files', () => {
         const visitWeek = selectedMonth.value.content.weeks.find(w => w.id == visitDetails.weekId)
         const cbsPart = visitWeek.parts.living.find(p => p.roles.includes('cbs'))
 
+        // replacing the CBS part
         cbsPart.thumbnail = "https://cms-imgp.jw-cdn.org/img/p/1011229/univ/art/1011229_univ_sqr_lg.jpg";
         cbsPart.title = visitDetails.talk;
         cbsPart.reference = 'CO\'s 1st Service Talk';
         cbsPart.isVisit = true;
         cbsPart.co = visitDetails.co
 
+        // disabling the reader
+        const readerId = `${cbsPart.id}.r`
+        visitWeek.parts.living = visitWeek.parts.living.filter(p => p.id !== readerId);
+
+        // replacing the last song
         if (visitDetails.sjj) visitWeek.songs[2] = visitDetails.sjj
+
+
     }
 
     async function loadMonthEvents() {

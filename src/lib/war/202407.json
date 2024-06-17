@@ -108,6 +108,14 @@
                         ]
                     },
                     {
+                        "id": "202407.1.7.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202407.1.8",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -240,6 +248,14 @@
                         "reference": "bt kap. 12 ¶7-13, kahon sa p. 109",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202407.2.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {
@@ -378,6 +394,14 @@
                         ]
                     },
                     {
+                        "id": "202407.3.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202407.3.10",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -502,6 +526,14 @@
                         ]
                     },
                     {
+                        "id": "202407.4.8.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202407.4.9",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -623,6 +655,14 @@
                         "reference": "bt kap. 13 ¶8-16, kahon sa p. 105",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202407.5.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {

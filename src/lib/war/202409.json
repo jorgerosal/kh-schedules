@@ -130,6 +130,14 @@
                         ]
                     },
                     {
+                        "id": "202409.1.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202409.1.10",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -240,6 +248,14 @@
                         "reference": "bt kap. 15 ¶8-12, kahon ha p. 134",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202409.2.7.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {
@@ -378,6 +394,14 @@
                         ]
                     },
                     {
+                        "id": "202409.3.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202409.3.10",
                         "time": 3,
                         "reference": "Konklusyon",
@@ -508,6 +532,14 @@
                         "reference": "bt kap. 15 ¶15-20",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202409.4.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {
@@ -642,6 +674,14 @@
                         "reference": "bt kap. 16 ¶1-5, kahon ha p. 146",
                         "roles": [
                             "cbs"
+                        ]
+                    },
+                    {
+                        "id": "202409.5.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
                         ]
                     },
                     {
