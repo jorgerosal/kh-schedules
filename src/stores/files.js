@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
 import { useCongregationStore } from './congregation';
 import { useCoVisitStore } from './covisits';
@@ -125,10 +125,24 @@ export const useFileStore = defineStore('files', () => {
 
     }
 
+    function storeToLocal() {
+        localStorage.setItem('mwb-template', template.value)
+    }
+
+    async function retrieveLocal() {
+        template.value = localStorage.getItem('mwb-template')
+    }
+
+    watch(
+        () => template.value,
+        () => storeToLocal()
+    )
+
     return {
         availableMonths, selectedMonth,
         setMWBMonth,
         loadFiles, supportedTemplates, template,
         loadMonthsVisit,
+        storeToLocal, retrieveLocal
     }
 })

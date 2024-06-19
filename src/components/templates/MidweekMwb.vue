@@ -2,10 +2,11 @@
     <TemplateView>
         <div id="template-bg">
             <div id="fsl-mwb">
-                <article v-if="isCustomize">
-                    <MainHeader :modals="modals.show" />
-                    <MeetingSections />
-                    <ScheduleContainer />
+                <article id="art-temp-psp" v-if="isCustomize">
+                    <CustomizedTemplate />
+                </article>
+                <article v-if="isS140">
+                    <SimpleTemplate />
                 </article>
             </div>
         </div>
@@ -13,20 +14,24 @@
 </template>
 
 <script setup>
-    import { computed, ref } from 'vue';
+    import { computed, onMounted } from 'vue';
     import { useFileStore } from '@/stores/files';
-    import MainHeader from '@/components/templates/template-psp/MainHeader.vue';
-    import MeetingSections from '@/components/templates/template-psp/MeetingSections.vue';
-    import ScheduleContainer from '@/components/templates/template-psp/ScheduleContainer.vue';
     import TemplateView from '@/components/layouts/TemplateView.vue'
+    import CustomizedTemplate from '@/components/templates/template-psp/_Customized.vue';
+    import SimpleTemplate from '@/components/templates/template-s140/_MainTemplate.vue';
 
     const file = useFileStore()
-    const modals = ref({
-        show: false
-    })
-
 
     const isCustomize = computed(() => {
         return file.template === 'a-100'
     })
+
+    const isS140 = computed(() => {
+        return file.template === 's-140'
+    })
+
+    onMounted(async () => {
+        await file.retrieveLocal()
+    })
+
 </script>
