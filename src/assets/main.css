@@ -27,6 +27,10 @@ body
     overflow: hidden;
 }
 
+#small-screen {
+    display: none;
+}
+
 #app
 {
     height: 100%;
@@ -362,7 +366,8 @@ section
     font-style: italic;
 }
 
-.thumbnail-alt {
+.thumbnail-alt
+{
     font-size: 12px;
     font-style: italic;
     text-align: right;
@@ -379,7 +384,6 @@ section
     height: 80%;
     max-width: 1200px;
     padding: 100px;
-    /* background: red; */
 }
 
 #cong-form .wrapper
@@ -474,6 +478,7 @@ section
 {
     background: #54b4f0;
 }
+
 .btn-warning:hover
 {
     background: #e63b03;
@@ -540,6 +545,133 @@ section
     left: 0;
 }
 
+@media only screen and (max-width: 1025px)
+{
+
+    .header
+    {
+        grid-template-columns: 85px 1fr;
+    }
+
+    article
+    {
+        grid-template-rows: 85px 35px auto;
+    }
+
+    .col-part svg
+    {
+        height: 31.5px;
+    }
+
+    .mwb-thumbnail img
+    {
+        height: 85px;
+    }
+
+    .details-title
+    {
+        font-size: 2.3vw;
+    }
+
+    .detail-congname input,
+    .details-month
+    {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 928px)
+{
+    .set-wrappers
+    {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .details-title
+    {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 828px)
+{
+    #fsl-mwb
+    {
+        padding: 30px;
+    }
+
+    .header
+    {
+        grid-template-columns: 75px 1fr;
+    }
+
+    article
+    {
+        grid-template-rows: 75px 30px auto;
+    }
+
+    .col-part svg
+    {
+        height: 26.5px;
+    }
+
+    .mwb-thumbnail img
+    {
+        height: 75px;
+    }
+
+    .details-title
+    {
+        font-size: 2.2vw;
+    }
+
+    .details-month
+    {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .part-item span:first-child
+    {
+        font-size: 9px;
+    }
+
+    .part-title-gems,
+    .part-title-ministry,
+    .part-title-living,
+    .assign-to
+    {
+        font-size: 1.6vw;
+    }
+
+    .generic-label,
+    .thumbnail-alt
+    {
+        font-size: 10px;
+    }
+
+    .week-sched
+    {
+        font-size: 1.5vw;
+    }
+
+    .cong-form-modal
+    {
+        max-height: 75vh !important;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    #template-bg, .headbar, #welcome {
+        display: none;
+    }
+
+    #small-screen {
+        display: flex;
+    }
+}
 
 @media print
 {
