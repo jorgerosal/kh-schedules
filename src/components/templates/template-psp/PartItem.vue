@@ -22,7 +22,7 @@
 <script setup>
     import { computed, ref } from 'vue';
     import { useAssignmentsStore } from '@/stores/assignments';
-    import PublisherSelector from '@/components/template-psp/PublisherSelector.vue'
+    import PublisherSelector from '@/components/templates/template-psp/PublisherSelector.vue'
     import thumbnails from '@/assets/utils/thumbnails';
 
     const props = defineProps({

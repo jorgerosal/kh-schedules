@@ -43,9 +43,9 @@
 <script setup>
     import IconCalendar from '@/components/icons/IconCalendar.vue';
     import IconBible from '@/components/icons/IconBible.vue';
-    import IconMusicNotes from '../icons/IconMusicNotes.vue';
-    import IconPraying from '../icons/IconPraying.vue';
-    import PublisherSelector from '@/components/template-psp/PublisherSelector.vue'
+    import IconMusicNotes from '../../icons/IconMusicNotes.vue';
+    import IconPraying from '../../icons/IconPraying.vue';
+    import PublisherSelector from '@/components/templates/template-psp/PublisherSelector.vue'
 
     import { computed, ref, watch, onMounted } from 'vue';
     import { useFileStore } from '@/stores/files';

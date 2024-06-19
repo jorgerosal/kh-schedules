@@ -10,8 +10,8 @@
 <script setup>
     import { useFileStore } from '@/stores/files';
     import { computed } from 'vue';
-    import ScheduleByWeek from '@/components/template-psp/ScheduleByWeek.vue'
-    import ScheduleEvent from '@/components/template-psp/ScheduleEvent.vue'
+    import ScheduleByWeek from '@/components/templates/template-psp/ScheduleByWeek.vue'
+    import ScheduleEvent from '@/components/templates/template-psp/ScheduleEvent.vue'
 
     const fileStore = useFileStore()
 

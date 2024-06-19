@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { defineStore } from 'pinia'
 import { useCongregationStore } from './congregation';
 import { useCoVisitStore } from './covisits';
@@ -8,9 +8,11 @@ import { cloneDeep } from 'lodash';
 export const useFileStore = defineStore('files', () => {
     const loadedMonth = ref({});
     const availableMonths = ref([]);
+    const template = ref('a-100')
+
     const templates = ref([
-        { code: 's-140', supported: false, name: "S-140" },
-        { code: 'a-100', supported: true, name: "Customized" },
+        { code: 's-140', supported: true, name: "S-140 Template" },
+        { code: 'a-100', supported: true, name: "Customized Template" },
     ]);
 
     const supportedTemplates = computed(() => {
@@ -123,10 +125,24 @@ export const useFileStore = defineStore('files', () => {
 
     }
 
+    function storeToLocal() {
+        localStorage.setItem('mwb-template', template.value)
+    }
+
+    async function retrieveLocal() {
+        template.value = localStorage.getItem('mwb-template')
+    }
+
+    watch(
+        () => template.value,
+        () => storeToLocal()
+    )
+
     return {
         availableMonths, selectedMonth,
         setMWBMonth,
-        loadFiles, supportedTemplates,
+        loadFiles, supportedTemplates, template,
         loadMonthsVisit,
+        storeToLocal, retrieveLocal
     }
 })

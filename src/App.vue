@@ -1,5 +1,5 @@
 <script setup>
-  import MidweekFSL from '@/components/templates/MidweekFSL.vue';
+  import MidweekMwb from '@/components/templates/MidweekMwb.vue';
   import CongregationForm from '@/components/forms/CongregationForm.vue';
   import CongPublishers from './components/forms/CongPublishers.vue';
   import PublisherForm from './components/forms/PublisherForm.vue';
@@ -47,7 +47,7 @@
 
   <!-- MWB FSL -->
   <template v-else-if="viewStore.initialStorageCheck">
-    <MidweekFSL />
+    <MidweekMwb />
   </template>
 
   <SmallScreen />
