@@ -49,10 +49,10 @@ export const useAssembliesStore = defineStore('assemblies', () => {
         const storedDetails = localStorage.getItem(STORAGE_DETAILS_KEY);
 
         if (storedAssemblies)
-            assemblies.value = JSON.parse(storedAssemblies)
+            assemblies.value = JSON.parse(storedAssemblies) ?? []
 
         if (storedDetails)
-            details.value = JSON.parse(storedDetails)
+            details.value = JSON.parse(storedDetails) ?? {}
     }
 
     function storeToLocal() {

@@ -15,16 +15,16 @@ export const useCoVisitStore = defineStore('visits', () => {
     function storeToLocal() {
         const storable = JSON.stringify(visits.value)
         const details = JSON.stringify(visitDetails.value)
-        localStorage.setItem(VISITS_STORAGE_KEY, storable)
-        localStorage.setItem(VISITS_DETAILS_KEY, details)
+        localStorage.setItem(VISITS_STORAGE_KEY, storable ?? [])
+        localStorage.setItem(VISITS_DETAILS_KEY, details ?? {})
     }
 
     async function retrieveLocal() {
         const storeVisits = localStorage.getItem(VISITS_STORAGE_KEY)
         const storeVisitDetails = localStorage.getItem(VISITS_DETAILS_KEY)
 
-        if (storeVisits) visits.value = JSON.parse(storeVisits)
-        if (storeVisitDetails) visitDetails.value = JSON.parse(storeVisitDetails)
+        if (storeVisits) visits.value = JSON.parse(storeVisits) ?? []
+        if (storeVisitDetails) visitDetails.value = JSON.parse(storeVisitDetails) ?? {}
     }
 
     function setVisit(isToAdd = true) {
