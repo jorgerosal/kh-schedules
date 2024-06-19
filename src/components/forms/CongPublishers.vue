@@ -30,7 +30,7 @@
 <script setup>
     import { useCongregationStore } from '@/stores/congregation';
     import { useViewStore } from '@/stores/views';
-    import PublisherListItem from '../template-psp/PublisherListItem.vue';
+    import PublisherListItem from '../templates/template-psp/PublisherListItem.vue';
     import { computed } from 'vue';
 
 

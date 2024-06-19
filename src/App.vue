@@ -1,5 +1,5 @@
 <script setup>
-  import MidweekFSL from '@/components/templates/MidweekFSL.vue';
+  import MidweekFSL from '@/components/templates/MidweekMwb.vue';
   import CongregationForm from '@/components/forms/CongregationForm.vue';
   import CongPublishers from './components/forms/CongPublishers.vue';
   import PublisherForm from './components/forms/PublisherForm.vue';

@@ -4,6 +4,9 @@
             <CongFormInputs :settings="settings" />
         </div>
         <div>
+            <MwbTempSelector/>
+        </div>
+        <div>
             <COVisitForm />
         </div>
         <div>
@@ -26,6 +29,8 @@
     import AssemblyForm from '../forms/AssemblyForm.vue';
     import DevContact from '../forms/DevContact.vue';
     import BackUp from '../forms/BackUp.vue';
+import MwbTempSelector from './MwbTempSelector.vue';
+    
 
     const emits = defineEmits(['hideMe']);
     const file = useFileStore();
@@ -92,4 +97,7 @@
         font-weight: 500;
 
     }
+
 </style>
+
+

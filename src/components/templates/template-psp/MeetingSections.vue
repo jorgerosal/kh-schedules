@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-    import MwbGem from '../icons/MwbGem.vue';
-    import MwbLiving from '../icons/MwbLiving.vue';
-    import MwbMinistry from '../icons/MwbMinistry.vue';
+    import MwbGem from '../../icons/MwbGem.vue';
+    import MwbLiving from '../../icons/MwbLiving.vue';
+    import MwbMinistry from '../../icons/MwbMinistry.vue';
 </script>
