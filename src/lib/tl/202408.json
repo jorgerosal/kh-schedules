@@ -119,6 +119,14 @@
                         ]
                     },
                     {
+                        "id": "202408.1.8.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },
+                    {
                         "id": "202408.1.9",
                         "time": 3,
                         "reference": "Pangwakas na Komento",
@@ -240,6 +248,14 @@
                             "cbs"
                         ]
                     },
+                    {
+                        "id": "202408.2.8.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },                    
                     {
                         "id": "202408.2.9",
                         "time": 3,
@@ -375,6 +391,14 @@
                         ]
                     },
                     {
+                        "id": "202408.3.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },                    
+                    {
                         "id": "202408.3.10",
                         "time": 3,
                         "reference": "Pangwakas na Komento",
@@ -509,6 +533,14 @@
                             "cbs"
                         ]
                     },
+                    {
+                        "id": "202408.4.9.r",
+                        "class": "accessory",
+                        "alt": "Magbabasa:",
+                        "roles": [
+                            "rdr"
+                        ]
+                    },                    
                     {
                         "id": "202408.4.10",
                         "time": 3,
