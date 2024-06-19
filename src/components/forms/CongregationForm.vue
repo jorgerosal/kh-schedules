@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="main" id="welcome">
         <div id="wrapper">
             <div id="form">
                 <div>

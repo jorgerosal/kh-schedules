@@ -3,6 +3,7 @@
   import CongregationForm from '@/components/forms/CongregationForm.vue';
   import CongPublishers from './components/forms/CongPublishers.vue';
   import PublisherForm from './components/forms/PublisherForm.vue';
+  import SmallScreen from './components/layouts/SmallScreen.vue';
 
   import { onMounted } from 'vue';
   import { useFileStore } from './stores/files';
@@ -49,4 +50,5 @@
     <MidweekFSL />
   </template>
 
+  <SmallScreen />
 </template>
