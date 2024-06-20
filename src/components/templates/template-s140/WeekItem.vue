@@ -35,6 +35,12 @@
                 <div></div>
             </div>
 
+            <!-- BAR RENDERER -->
+            <!-- <div class="s140-grid-col2">
+                <div class="s140-meetingbar part-living">{{ livingTitle }}</div>
+                <div></div>
+            </div> -->
+
             <PartItem :part="midSong" />
 
             <div v-for="part in livingItems" :key="part.id">
@@ -52,9 +58,10 @@
 
 <script setup>
     import { computed } from 'vue';
+    import { useCongregationStore } from '@/stores/congregation';
     import PartItem from './PartItem.vue';
     import translations from '@/assets/utils/translations';
-    import { useCongregationStore } from '@/stores/congregation';
+
 
     const congStore = useCongregationStore()
     const props = defineProps({
@@ -145,5 +152,6 @@
         return part
     })
 
+    
 
 </script>
