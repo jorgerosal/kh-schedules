@@ -7,7 +7,7 @@
                     alt="">
             </div>
             <div class="event-details">
-                <div class="event-week">{{ weekEvent.week.week }} | Assembly Week </div>
+                <div class="event-week">{{ weekEvent.week.week }} | {{ weekEventName }} Week </div>
                 <div class="event-name">{{ weekEvent.event?.name }}</div>
                 <div class="event-theme" :style="color"> {{ weekEvent.theme }}</div>
             </div>
@@ -38,6 +38,11 @@
         return {
             color: weekEvent.colorTheme
         }
+    })
+
+    const weekEventName = computed(() => {
+        const code = weekEvent.event.code
+        return code == 'rc' ? 'Convention' : 'Assembly'
     })
 </script>
 

@@ -81,7 +81,7 @@
         const newMinutes = totalMinutes % 60;
 
         if (newHours === 0) {
-            newHours = 12; 
+            newHours = 12;
         } else if (newHours > 12) {
             newHours -= 12;
         }

@@ -83,7 +83,7 @@ export const useCongregationStore = defineStore('congregation', () => {
             congregation.value = parsed
 
             if (!congregation.value.midweekTime)
-                congregation.value.midweekTime = '06:00' 
+                congregation.value.midweekTime = '06:00'
         }
     }
 

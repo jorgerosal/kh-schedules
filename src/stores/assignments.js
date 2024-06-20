@@ -12,7 +12,7 @@ export const useAssignmentsStore = defineStore('assignments', () => {
 
     async function retrieveLocal() {
         const storedAssignments = localStorage.getItem(LOCAL_KEY);
-        
+
         if (storedAssignments && storedAssignments != 'null') {
             const parsed = JSON.parse(storedAssignments)
             assignments.value = parsed
