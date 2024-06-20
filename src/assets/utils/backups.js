@@ -15,6 +15,7 @@ const LOCAL_KEYS = {
     khmsCoVisits: "khms-co-visits",
     visitDetails: "khms-co-visits-details",
     eventDetails: "khms-events-details",
+    mwbTemplate: "mwb-template",
 }
 
 const backup = {
@@ -50,6 +51,7 @@ async function compose() {
         khmsCoVisits: JSON.parse(localStorage.getItem(LOCAL_KEYS.khmsCoVisits)),
         visitDetails: JSON.parse(localStorage.getItem(LOCAL_KEYS.visitDetails)),
         eventDetails: JSON.parse(localStorage.getItem(LOCAL_KEYS.eventDetails)),
+        mwbTemplate: localStorage.getItem(LOCAL_KEYS.mwbTemplate),
     }
 }
 
@@ -61,6 +63,7 @@ async function restore(data) {
     localStorage.setItem(LOCAL_KEYS.khmsCoVisits, JSON.stringify(res.khmsCoVisits))
     localStorage.setItem(LOCAL_KEYS.visitDetails, JSON.stringify(res.visitDetails))
     localStorage.setItem(LOCAL_KEYS.eventDetails, JSON.stringify(res.eventDetails))
+    localStorage.setItem(LOCAL_KEYS.mwbTemplate, res.mwbTemplate)
 
     const assemblies = useAssembliesStore();
     const congregation = useCongregationStore();

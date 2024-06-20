@@ -91,7 +91,6 @@ export const useCongregationStore = defineStore('congregation', () => {
 
     function setCongName(name) {
         congregation.value['name'] = name
-        storeToLocal()
     }
 
     function addPublisher(pub) {
@@ -99,8 +98,6 @@ export const useCongregationStore = defineStore('congregation', () => {
 
         if (!pubs) congregation.value.publishers = []
         congregation.value.publishers.push(pub)
-
-        storeToLocal();
     }
 
     function updatePublisher(pub) {
@@ -132,8 +129,9 @@ export const useCongregationStore = defineStore('congregation', () => {
     }
 
     watch(
-        () => congregation.value.name,
-        () => storeToLocal()
+        () => congregation.value,
+        () => storeToLocal(),
+        { deep: true }
     );
 
     return {

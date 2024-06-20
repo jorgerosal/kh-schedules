@@ -23,13 +23,19 @@
 
 <script setup>
     import { useToast } from 'vue-toast-notification';
+    import { useFileStore } from '@/stores/files';
     import 'vue-toast-notification/dist/theme-sugar.css';
     import backup from '@/assets/utils/backups';
     import IconGT from '../icons/IconGT.vue';
 
+    const file = useFileStore()
+
     async function restore(e) {
         const $toast = useToast();
         await backup.restore(e);
+        await file.setMWBMonth()
+        await file.retrieveLocal()
+
         $toast.success('Back Up Restored!', {
             position: "top-right"
         });
@@ -51,16 +57,6 @@
         gap: 10px;
     }
 
-    /* .action-item
-    {
-        padding: 10px 20px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        border: 1px red solid;
-        border-radius: 4px;
-        } */
-
     .action-item
     {
         padding: 10px 20px;
@@ -68,7 +64,6 @@
         display: flex;
         justify-content: space-between;
         border: 1px rgba(250, 250, 250, 0.582) solid;
-        /* border: 1px red solid; */
         border-radius: 4px;
     }
 
