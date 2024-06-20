@@ -31,7 +31,7 @@
     })
 
     onMounted(async () => {
-        await file.retrieveLocal()
+        await file.retrieveLocal();
     })
 
 </script>

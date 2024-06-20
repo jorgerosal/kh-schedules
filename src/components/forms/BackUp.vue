@@ -30,6 +30,7 @@
     async function restore(e) {
         const $toast = useToast();
         await backup.restore(e);
+
         $toast.success('Back Up Restored!', {
             position: "top-right"
         });
@@ -51,16 +52,6 @@
         gap: 10px;
     }
 
-    /* .action-item
-    {
-        padding: 10px 20px;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        border: 1px red solid;
-        border-radius: 4px;
-        } */
-
     .action-item
     {
         padding: 10px 20px;
@@ -68,7 +59,6 @@
         display: flex;
         justify-content: space-between;
         border: 1px rgba(250, 250, 250, 0.582) solid;
-        /* border: 1px red solid; */
         border-radius: 4px;
     }
 

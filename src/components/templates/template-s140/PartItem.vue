@@ -1,7 +1,7 @@
 <template>
     <div class="s140-grid-col2 s140-part-item">
         <div class="s140-grid-titles">
-            <span v-show="part.time" class="s140-runtime">0:00</span>
+            <span v-show="part.time" class="s140-runtime">{{ runTime }}</span>
             <span v-show="part.time">{{ part.title }} {{ timeLimit }}</span>
         </div>
         <div class="assignee" v-show="canSelectPerson" @click.stop="showSelector">
@@ -16,10 +16,9 @@
 
 <script setup>
     import { useAssignmentsStore } from '@/stores/assignments';
-    import { computed, onMounted, ref } from 'vue';
-    import PublisherSelector from '../template-psp/PublisherSelector.vue';
-    import translations from '@/assets/utils/translations';
+    import { computed, ref } from 'vue';
     import { useCongregationStore } from '@/stores/congregation';
+    import PublisherSelector from '../template-psp/PublisherSelector.vue';
 
 
     const assignmentStore = useAssignmentsStore();
@@ -66,25 +65,32 @@
         return assigned
     })
 
-    const lang = computed(() => {
-        return congStore.congregation.lang
+    const runTime = computed(() => {
+        const startTime = congStore.congregation.midweekTime ?? '06:00'
+        return displayTime(startTime, props.part.runtime)
     })
 
     function showSelector() {
         selector.value.show = true
     }
 
-    onMounted(() => {
-        if (props.part.roles.includes('demo')) {
-            props.part.label = translations.mwbs140[lang.value].demo
+    function displayTime(startingTime, minutesToAdd) {
+        const [startHours, startMinutes] = startingTime.split(':').map(Number);
+        let totalMinutes = startHours * 60 + startMinutes + minutesToAdd;
+        let newHours = Math.floor(totalMinutes / 60) % 24;
+        const newMinutes = totalMinutes % 60;
+
+        if (newHours === 0) {
+            newHours = 12; 
+        } else if (newHours > 12) {
+            newHours -= 12;
         }
 
-        if (props.part.roles.includes('talk')) {
-            props.part.label = translations.mwbs140[lang.value].student
-        }
+        const formattedHours = newHours.toString().padStart(2, '0');
+        const formattedMinutes = newMinutes.toString().padStart(2, '0');
 
-        if (props.part.roles.includes('br')) {
-            props.part.label = translations.mwbs140[lang.value].student
-        }
-    })
+        return `${formattedHours}:${formattedMinutes}`;
+    }
+
+
 </script>

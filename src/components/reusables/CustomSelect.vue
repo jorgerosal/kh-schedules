@@ -108,6 +108,8 @@
         transform: translateY(0);
         transition: opacity 0.3s;
         flex-direction: column;
+        max-height: 200px;
+        overflow-y: auto;
     }
 
     .dd-items

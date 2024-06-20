@@ -4,11 +4,13 @@ import { useCongregationStore } from './congregation';
 import { useCoVisitStore } from './covisits';
 import { useAssembliesStore } from './assemblies';
 import { cloneDeep } from 'lodash';
+import { s140 } from '@/assets/utils/composer';
 
 export const useFileStore = defineStore('files', () => {
     const loadedMonth = ref({});
     const availableMonths = ref([]);
     const template = ref('a-100')
+    const s140Parts = ref({});
 
     const templates = ref([
         { code: 's-140', supported: true, name: "S-140 Template" },
@@ -64,7 +66,16 @@ export const useFileStore = defineStore('files', () => {
         }
 
         await loadMonthsVisit();
-        await loadMonthEvents()
+        await loadMonthEvents();
+        await composeS140();
+    }
+
+    async function composeS140() {
+
+        if (!template.value == "s-140") return
+        const congregationStore = useCongregationStore();
+        const lang = congregationStore.getStoredLanguage?.code;
+        s140Parts.value = await s140(selectedMonth.value, lang)
     }
 
     async function loadMonthsVisit() {
@@ -101,8 +112,6 @@ export const useFileStore = defineStore('files', () => {
 
         // replacing the last song
         if (visitDetails.sjj) visitWeek.songs[2] = visitDetails.sjj
-
-
     }
 
     async function loadMonthEvents() {
@@ -149,6 +158,6 @@ export const useFileStore = defineStore('files', () => {
         setMWBMonth,
         loadFiles, supportedTemplates, template,
         loadMonthsVisit,
-        storeToLocal, retrieveLocal
+        storeToLocal, retrieveLocal, s140Parts
     }
 })

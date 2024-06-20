@@ -41,7 +41,6 @@ export const useAssembliesStore = defineStore('assemblies', () => {
             week,
             colorTheme,
         }
-
     })
 
     async function retrieveLocal() {
