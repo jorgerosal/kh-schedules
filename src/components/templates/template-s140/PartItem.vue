@@ -16,7 +16,7 @@
 
 <script setup>
     import { useAssignmentsStore } from '@/stores/assignments';
-    import { computed, onMounted, ref } from 'vue';
+    import { computed, onMounted, ref, watch } from 'vue';
     import PublisherSelector from '../template-psp/PublisherSelector.vue';
     import translations from '@/assets/utils/translations';
     import { useCongregationStore } from '@/stores/congregation';
@@ -74,7 +74,7 @@
         selector.value.show = true
     }
 
-    onMounted(() => {
+    function assignLabels() {
         if (props.part.roles.includes('demo')) {
             props.part.label = translations.mwbs140[lang.value].demo
         }
@@ -86,5 +86,15 @@
         if (props.part.roles.includes('br')) {
             props.part.label = translations.mwbs140[lang.value].student
         }
+    }
+
+    onMounted(() => {
+        assignLabels()
     })
+
+    watch(
+        () => props.part,
+        () => assignLabels(),
+        { deep: true }
+    )
 </script>
