@@ -199,7 +199,7 @@ article
     height: var(--h-1);
 }
 
-.part-treasures
+.part-treasures, .part-gems
 {
     background-color: var(--theme-gems);
 }
@@ -603,11 +603,14 @@ section
     grid-template-columns: 50px 1fr;
     font-weight: 600;
     color: #555;
+    align-items: flex-start;
 }
 
 .s140-runtime {
-    font-size: .8em;
-    color: gray;
+    font-size: .85em;
+    color: rgb(163, 163, 163);
+    align-self: flex-start;
+    padding-top: 2px;
 }
 
 .s140-meetingbar {

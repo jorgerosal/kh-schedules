@@ -1,6 +1,7 @@
 import translations from "./translations"
 
 let lang = ''
+let runtime = 0;
 
 async function s140(month, language) {
     const weeks = {}
@@ -9,6 +10,7 @@ async function s140(month, language) {
 
 
     for (let w in sourceWeeks) {
+        runtime = 0
         const week = sourceWeeks[w]
         weeks[week.id] = []
         await weeklyParts(week, weeks[week.id])
@@ -27,7 +29,8 @@ const header = (src, partCode, week) => {
         type: 'header',
         title: translations.mwbs140[lang][partCode],
         showNoTime: true,
-    }    
+        classNames: `s140-meetingbar part-${partCode}`
+    }
 
     week.push(part)
 }
@@ -43,6 +46,9 @@ const opening = (src, week) => {
         showNoTime: true,
         label: translations.mwbs140[lang].prayer,
     }
+
+    part.runtime = runtime
+    runtime = parseFloat(part.time) + runtime + 1
     week.push(part)
 }
 
@@ -55,6 +61,8 @@ const midsong = (src, week) => {
         showNoTime: true
     }
 
+    part.runtime = runtime
+    runtime = parseFloat(part.time) + runtime
     week.push(part);
 }
 
@@ -69,6 +77,9 @@ const closing = (src, week) => {
         showNoTime: true,
         label: translations.mwbs140[lang].prayer,
     }
+
+    part.runtime = runtime
+    runtime = parseFloat(part.time) + runtime
     week.push(part);
 }
 
@@ -76,6 +87,10 @@ const introduction = (src, week) => {
     const part = src.parts.gems[0]
     part.title = part.reference
     part.label = translations.mwbs140[lang].chairman
+
+    part.runtime = runtime
+    runtime = parseFloat(part.time) + runtime
+
     week.push(part)
 }
 
@@ -87,6 +102,10 @@ const gems = (src, week) => {
             if (part.roles.includes('br')) {
                 part.label = translations.mwbs140[lang].student
             }
+
+            part.runtime = runtime
+            runtime = parseFloat(part.time) + runtime + 1
+
             week.push(part)
         }
     }
@@ -105,6 +124,9 @@ const ministry = (src, week) => {
             part.label = translations.mwbs140[lang].student
         }
 
+        part.runtime = runtime
+        runtime = parseFloat(part.time) + runtime + 1
+
         week.push(part)
     }
 }
@@ -113,7 +135,25 @@ const living = (src, week) => {
     const parts = src.parts.living
     for (let s in parts) {
         const part = parts[s];
-        // modify here if needed
+
+        if (part.roles.includes('cbs')) {
+            part.label = translations.mwbs140[lang].conductor
+        }
+
+        if (part.class === 'accessory') {
+            part.label = part.alt.replace(':','')
+        }
+
+        if (s == parts.length - 1) {
+            part.label = translations.mwbs140[lang].chairman
+            part.title = part.reference
+        }
+
+        if (part.time) {
+            part.runtime = runtime
+            runtime = parseFloat(part.time) + runtime               
+        }
+ 
         week.push(part)
     }
 }
@@ -121,11 +161,11 @@ const living = (src, week) => {
 async function weeklyParts(src, week) {
     opening(src, week);
     introduction(src, week)
-    header(src,'gems',week)
+    header(src, 'gems', week)
     gems(src, week)
-    header(src,'ministry',week)
+    header(src, 'ministry', week)
     ministry(src, week)
-    header(src,'living',week)
+    header(src, 'living', week)
     midsong(src, week);
     living(src, week)
     closing(src, week)
