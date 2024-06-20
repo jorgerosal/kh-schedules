@@ -29,9 +29,9 @@
 
 <style scoped>
     .main {
-        padding: 50px 40px;
+        padding: 80px 40px;
         border: 1px solid oldlace;
-        margin: 40px 10px;
+        margin: 80px 10px;
         border-left: 20px solid oldlace;
     }
 
