@@ -5,23 +5,20 @@
         </div>
 
         <template v-for="part in composedParts" :key="part.id">
-
             <template v-if="part.type == 'header'">
                 <div class="s140-grid-col2">
                     <div :class="part.classNames">{{ part.title }}</div>
                     <div></div>
                 </div>
             </template>
-
             <template v-else>
-                <PartItem :part="part"/>        
+                <PartItem :part="part" />
             </template>
         </template>
 
         <div class="s140-yspacer no-print"></div>
         <div class="s140-yspacer no-print"></div>
         <div class="s140-yspacer no-print"></div>
-        <!-- </div> -->
     </div>
 </template>
 

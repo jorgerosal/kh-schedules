@@ -1,3 +1,25 @@
+<template>
+  <!-- Modal -->
+  <PublisherForm v-if="viewStore.pubForm" />
+
+  <!-- Modal -->
+  <template v-if="viewStore.congregationForm">
+    <CongregationForm />
+  </template>
+
+  <!-- Modal -->
+  <template v-else-if="viewStore.publishers">
+    <CongPublishers />
+  </template>
+
+  <!-- MWB FSL -->
+  <template v-else-if="viewStore.initialStorageCheck">
+    <MidweekMwb />
+  </template>
+
+  <SmallScreen />
+</template>
+
 <script setup>
   import MidweekMwb from '@/components/templates/MidweekMwb.vue';
   import CongregationForm from '@/components/forms/CongregationForm.vue';
@@ -30,25 +52,3 @@
     if (!viewStore.congregationForm) viewStore.initialStorageCheck = true
   })
 </script>
-
-<template>
-  <!-- Modal -->
-  <PublisherForm v-if="viewStore.pubForm" />
-
-  <!-- Modal -->
-  <template v-if="viewStore.congregationForm">
-    <CongregationForm />
-  </template>
-
-  <!-- Modal -->
-  <template v-else-if="viewStore.publishers">
-    <CongPublishers />
-  </template>
-
-  <!-- MWB FSL -->
-  <template v-else-if="viewStore.initialStorageCheck">
-    <MidweekMwb />
-  </template>
-
-  <SmallScreen />
-</template>

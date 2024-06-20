@@ -46,7 +46,8 @@
         gap: 4px
     }
 
-    .pub-name {
+    .pub-name
+    {
         font-weight: 600;
     }
 

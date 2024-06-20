@@ -111,7 +111,7 @@
     function assignPart(pub) {
         if (!isDemo.value && !isPrayer.value) {
             assignmentStore.setAssignment(props.part.id, pub.name)
-            
+
             // check if there are autofills
             if (props.part.autofills) {
                 const autofills = props.part.autofills

@@ -10,7 +10,6 @@
     import { useAssembliesStore } from '@/stores/assemblies';
     import { computed } from 'vue';
 
-
     const event = useAssembliesStore()
     const weekEvent = event.currentDetail
 

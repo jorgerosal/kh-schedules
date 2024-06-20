@@ -141,7 +141,7 @@ const living = (src, week) => {
         }
 
         if (part.class === 'accessory') {
-            part.label = part.alt.replace(':','')
+            part.label = part.alt.replace(':', '')
         }
 
         if (s == parts.length - 1) {
@@ -151,9 +151,9 @@ const living = (src, week) => {
 
         if (part.time) {
             part.runtime = runtime
-            runtime = parseFloat(part.time) + runtime               
+            runtime = parseFloat(part.time) + runtime
         }
- 
+
         week.push(part)
     }
 }

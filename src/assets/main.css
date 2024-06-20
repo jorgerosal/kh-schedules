@@ -20,7 +20,8 @@
     font-optical-sizing: auto;
 }
 
-.relative {
+.relative
+{
     position: relative;
 }
 
@@ -66,7 +67,7 @@ body
     height: auto;
     overflow: visible;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    
+
 }
 
 article
@@ -78,7 +79,8 @@ article
     font-size: 14px;
 }
 
-#art-temp-psp {
+#art-temp-psp
+{
     grid-template-rows: var(--sqr) var(--h-2) auto;
 }
 
@@ -199,7 +201,8 @@ article
     height: var(--h-1);
 }
 
-.part-treasures, .part-gems
+.part-treasures,
+.part-gems
 {
     background-color: var(--theme-gems);
 }
@@ -570,17 +573,20 @@ section
     padding: 5px;
 }
 
-.s140-header-title {
+.s140-header-title
+{
     font-family: "Lora", serif;
     font-size: 1.9rem;
     font-weight: 800;
 }
 
-.s140-header-cong {
+.s140-header-cong
+{
     font-weight: 600;
 }
 
-.s140-hr {
+.s140-hr
+{
     display: flex;
     width: 100%;
     height: 9px;
@@ -589,16 +595,19 @@ section
     border-bottom: 1px solid rgb(68, 68, 68);
 }
 
-.s140-week {
+.s140-week
+{
     margin: 20px 0 40px;
 }
 
-.s140-grid-col2 {
+.s140-grid-col2
+{
     display: grid;
     grid-template-columns: 4fr 1fr;
 }
 
-.s140-grid-titles {
+.s140-grid-titles
+{
     display: grid;
     grid-template-columns: 50px 1fr;
     font-weight: 600;
@@ -606,14 +615,16 @@ section
     align-items: flex-start;
 }
 
-.s140-runtime {
+.s140-runtime
+{
     font-size: .85em;
     color: rgb(163, 163, 163);
     align-self: flex-start;
     padding-top: 2px;
 }
 
-.s140-meetingbar {
+.s140-meetingbar
+{
     color: white;
     padding: 3px 8px;
     font-size: .89em;
@@ -621,26 +632,30 @@ section
     grid-column: span 1;
 }
 
-.s140-part-item {
+.s140-part-item
+{
     font-size: .87em;
     padding: 3px 8px 5px;
 }
 
-.s140-week-title {
+.s140-week-title
+{
     text-transform: uppercase;
     font-weight: 700;
     font-size: .9em;
     padding: 3px 8px 5px 0px;
 }
 
-.s140-person {
+.s140-person
+{
     font-size: .9em;
     font-weight: 500;
     padding: 3px 0 3px 20px;
     cursor: pointer;
 }
 
-.s140-part-label {
+.s140-part-label
+{
     position: absolute;
     right: 100%;
     padding-right: 0px;
@@ -648,16 +663,18 @@ section
     text-wrap: nowrap;
 }
 
-.s140-break {
+.s140-break
+{
     position: absolute;
     background: rgb(182, 182, 182);
     height: 10px;
-    width: calc(100% + 100px) ;
+    width: calc(100% + 100px);
     left: -50px;
     top: -30px;
 }
 
-.s140-yspacer {
+.s140-yspacer
+{
     height: 20px;
 }
 
@@ -710,7 +727,7 @@ section
     {
         font-size: 1.1rem;
     }
-    
+
 }
 
 @media only screen and (max-width: 828px)
@@ -780,7 +797,8 @@ section
         max-height: 75vh !important;
     }
 
-    .s140-header-title {
+    .s140-header-title
+    {
         font-size: 1.55rem;
     }
 
@@ -861,5 +879,3 @@ section
 {
     background: #555;
 }
-
-

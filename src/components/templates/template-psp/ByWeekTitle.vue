@@ -74,7 +74,7 @@
         { deep: true }
     )
 
-    onMounted(() => { 
+    onMounted(() => {
         prayer.value.id = props.w.id
     })
 
