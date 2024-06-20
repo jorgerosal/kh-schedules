@@ -18,9 +18,9 @@
             </template>
         </template>
 
-        <div class="s140-yspacer"></div>
-        <div class="s140-yspacer"></div>
-        <div class="s140-yspacer"></div>
+        <div class="s140-yspacer no-print"></div>
+        <div class="s140-yspacer no-print"></div>
+        <div class="s140-yspacer no-print"></div>
         <!-- </div> -->
     </div>
 </template>
