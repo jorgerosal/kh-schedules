@@ -23,12 +23,9 @@
 
 <script setup>
     import { useToast } from 'vue-toast-notification';
-    import { useFileStore } from '@/stores/files';
     import 'vue-toast-notification/dist/theme-sugar.css';
     import backup from '@/assets/utils/backups';
     import IconGT from '../icons/IconGT.vue';
-
-    const file = useFileStore()
 
     async function restore(e) {
         const $toast = useToast();
