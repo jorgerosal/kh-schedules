@@ -130,7 +130,13 @@ export const useFileStore = defineStore('files', () => {
     }
 
     async function retrieveLocal() {
-        template.value = localStorage.getItem('mwb-template')
+        const stored = localStorage.getItem('mwb-template')
+        if (stored == null) {
+            template.value = 'a-100'
+            localStorage.setItem('mwb-template', template.value)
+        } else {
+            template.value = stored
+        }
     }
 
     watch(
