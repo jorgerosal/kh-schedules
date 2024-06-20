@@ -3,6 +3,7 @@ import { useAssembliesStore } from "@/stores/assemblies";
 import { useCongregationStore } from '@/stores/congregation';
 import { useAssignmentsStore } from '@/stores/assignments';
 import { useCoVisitStore } from '@/stores/covisits';
+import { useFileStore } from '@/stores/files';
 
 
 const pinia = createPinia();
@@ -69,11 +70,13 @@ async function restore(data) {
     const congregation = useCongregationStore();
     const assignments = useAssignmentsStore();
     const eventDetails = useCoVisitStore();
+    const fileStore = useFileStore()
 
     assemblies.retrieveLocal();
     congregation.retrieveLocal();
     assignments.retrieveLocal();
     eventDetails.retrieveLocal();
+    fileStore.retrieveLocal();
 }
 
 function downloadJSONAsText(jsonObject) {

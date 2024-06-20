@@ -33,8 +33,6 @@
     async function restore(e) {
         const $toast = useToast();
         await backup.restore(e);
-        await file.setMWBMonth()
-        await file.retrieveLocal()
 
         $toast.success('Back Up Restored!', {
             position: "top-right"
