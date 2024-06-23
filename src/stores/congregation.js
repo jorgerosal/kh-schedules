@@ -48,8 +48,8 @@ export const useCongregationStore = defineStore('congregation', () => {
     const publishers = computed(() => {
         const pubs = congregation.value?.publishers ?? [].slice();
         const sorted = pubs.sort((p1, p2) => {
-            const name1 = p1['name']
-            const name2 = p2['name']
+            const name1 = p1['name'] ?? ''
+            const name2 = p2['name'] ?? ''
 
             return name1.localeCompare(name2)
         })
