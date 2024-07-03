@@ -1,5 +1,6 @@
 <template>
     <div class="headbar no-print">
+        <div class="red-notice">This version will be DISABLED SOON! Use the latest version at <a href="https://jezzar042015.github.io/khms/">https://jezzar042015.github.io/khms/</a></div>
         <div class="set-wrappers">
             <div class="setters">
                 <span>Month</span>
@@ -80,7 +81,7 @@
 <style scoped>
     .headbar
     {
-        height: 60px;
+        height: 100px;
         width: 100%;
         background: rgb(59, 56, 56);
         position: fixed;
@@ -88,11 +89,32 @@
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     }
 
+    .red-notice {
+        width: 100%;
+        background: orangered;
+        display: flex;
+        color: white;
+        padding: 5px;
+        justify-content: center;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .red-notice a {
+        color: white;
+        text-decoration: none;
+        font-size: .9em;
+        background: rgba(150, 40, 0, 0.582);
+        border: 1px rgba(255, 255, 255, 0.452) solid;
+        padding: 5px 15px;
+        border-radius: 5px;
+    }
+
     .set-wrappers
     {
         display: flex;
         margin: auto;
-        height: 100%;
+        height: 58%;
         max-width: 1070px;
         justify-content: space-between;
         align-items: center;
